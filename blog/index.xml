@@ -1,5 +1,18 @@
-<redirect>
-    <newLocation>
-        http://www.andrewoberstar.com/feed.xml
-    </newLocation>
-</redirect>
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://www.rssboard.org/media-rss" version="2.0">
+  <channel>
+    <title>Andrew Oberstar</title>
+    <link>http://www.andrewoberstar.com/</link>
+    <lastBuildDate>Sun, 20 Nov 2016 12:00:00 +0000</lastBuildDate>
+    <language>en-US</language>
+    <item>
+      <title>Blog Has Moved</title>
+      <category>Development</category>
+      <dc:creator>Andrew Oberstar</dc:creator>
+      <pubDate>Sun, 20 Nov 2016 12:00:00 +0000</pubDate>
+      <link>http://www.andrewoberstar.com/</link>
+      <guid isPermaLink="true">http://www.andrewoberstar.com/feed.xml</guid>
+      <description><![CDATA[<p>Please go to <a href="http://www.andrewoberstar.com/">www.andrewoberstar.com</a> and click Subscribe to update your feed reader.</p>]]></description>
+    </item>
+  </channel>
+</rss>
