@@ -3,3 +3,4 @@ markdown: kramdown
 permalink: /blog/:year/:i_month/:i_day/:title
 gems:
     - jekyll-sitemap
+    - jekyll-redirect-from
