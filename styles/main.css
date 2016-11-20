@@ -38,5 +38,5 @@ article section h6 { font-size: 0.67em; line-height: normal; }
 /* END h sizing in articles */
 
 /* BEGIN fix overflow of code samples */
-pre.highlight { overflow-x: scroll; }
+pre.highlight { overflow-x: auto; }
 /* END fix overflow of code samples */
