@@ -14,11 +14,13 @@ I've really enjoyed a lot of Scala features so far:
 - Type inference -  One of the advantages to dynamic languages is that you don't have to specify types.  Usually it's so obvious what type the value should be that it's just a waste of keystrokes to specify the type yourself.  Scala gives you the same benefit but with static types, so everything is still enforced by the compiler.
 
   In Java:
+
   ```java
   Map map = new HashMap(); //verbose...
   ```
 
   In Groovy:
+
   ```groovy
   def map = [:] //concise, but no type safety
   ```
@@ -28,6 +30,7 @@ I've really enjoyed a lot of Scala features so far:
   var map = Map[String, String]() //concise, with type safety
   ```
 - Traits - Traits are insanely flexible compared to being stuck with abstract classes and interfaces in Java.  Being able to mix in an arbitrary number of traits to add new behavior is so much nicer than being forced into a hierarchical structure all of the time.  One example I have found useful is a simple Logging trait to provide an instance value named "logger".
+
   ```scala
   trait Logging {
     private val logger = LoggerFactory.getLogger(getClass)
@@ -46,6 +49,7 @@ I've really enjoyed a lot of Scala features so far:
 - If structures that return values - Scala's if statement (and for expressions) can return values, which can reduce a little bit of boilerplate (and also replace the odd looking ternary operator from Java).
 
   In Java:
+
   ```java
   //the if statement
   int testing1;
@@ -61,6 +65,7 @@ I've really enjoyed a lot of Scala features so far:
   ```
 
   In Scala:
+
   ```scala
   //consistently use if structure for if-like things
   val testing = if (somethingBoolean) "Hey, that was true!" else "Darn, that was false."
@@ -77,6 +82,7 @@ I've really enjoyed a lot of Scala features so far:
   }
   ```
 - For expressions - If I had learned about Scala after Erlang, I might have caught on to this at the time, but for expressions in Scala are very similar to list comprehensions in Erlang (I would even argue more powerful).
+
   ```scala
   val list = List(1, 2, 3, 4, 5, 6, 7, 8, 9)
 
@@ -87,6 +93,7 @@ I've really enjoyed a lot of Scala features so far:
 - Option type (i.e. Death to nulls!) - In Java, you have to worry about the dreaded NullPointerException (NPE) since null is the general approach to saying that a variable has no value.  Since there's no way of telling whether a variable might be null or not, you should really be doing null checks all over the place.  Yuck...
 
   In Scala, however, the idiomatic approach is to use the Option[T] type.  This says that the variable may or may not actually have a value.  It's value will either by Some(value: T) or None.  The Option class has a bunch of nice methods to help you deal with these results:
+
   ```scala
   def checkValues(map: Map[String, List[Int]]) {
     //calling get on a map returns an Option[V] (V being the type of the values in the map)
@@ -112,6 +119,7 @@ There are other things I'm having trouble grasping:
 
 - Immutability - I'm so used to the approach of encapsulating mutable state in an object, that it puzzles me to try to write a program without (or with significantly less) mutable state.  Scala lets you use mutable state, but they do nudge you towards immutability.  With mutable state you can pass the object to someone and know that no matter when they decide to use it, they'll have the up to date version.  Granted if you passed it to another thread you have to be worried about concurrency issues.  Using Actors to encapsulate some of the major mutable state has been my approach so far, which seems to be helping.
 - Import statements - Scala has much more powerful (shoot yourself in the foot powerful) import statements.  There are a bunch of different flavors:
+
   ```scala
   //normal import one type import
   import java.net.URI //OK, makes sense
