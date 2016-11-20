@@ -36,3 +36,7 @@ article section h4 { font-size: 1em; line-height: normal; }
 article section h5 { font-size: 0.83em; line-height: normal; }
 article section h6 { font-size: 0.67em; line-height: normal; }
 /* END h sizing in articles */
+
+/* BEGIN fix overflow of code samples */
+pre.highlight { overflow-x: scroll; }
+/* END fix overflow of code samples */
