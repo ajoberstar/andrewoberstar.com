@@ -1,9 +1,9 @@
 - text: Home
   url: /
 - text: About
-  url: /about
+  url: /about/
 - text: Archive
-  url: /archive
+  url: /archive/
 - text: Subscribe
   url: /feed.xml
 - text: GitHub

@@ -6,7 +6,7 @@ tags:
     - gradle
     - build
 ---
-As part of the new [Gradle plugin portal](http://plugins.gradle.org), you need to set some attributes on the version of your plugin package in Bintray.
+As part of the new [Gradle plugin portal](https://plugins.gradle.org/), you need to set some attributes on the version of your plugin package in Bintray.
 
 The [Bintray Gradle plugin](https://github.com/bintray/gradle-bintray-plugin) lets you set attributes, so you can add the following snippet into your project to include all of your plugin IDs in the attributes.
 
