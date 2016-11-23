@@ -1,3 +1,15 @@
+- name: grgit
+  url: https://github.com/ajoberstar/grgit
+  description: "Groovy library for interacting with Git repositories. Wraps the JGit library."
 - name: gradle-git
   url: https://github.com/ajoberstar/gradle-git
-  description: "Supporting content"
+  description: "Git plugins for Gradle. Supports general Git interaction, publishing to Git repos, and versioning/release based on Git repo."
+- name: semver-vcs
+  url: https://github.com/ajoberstar/semver-vcs
+  description: "Infers a project's version from the state of your VCS. Can be used to automate versioning in your build."
+- name: gradle-git-publish
+  url: https://github.com/ajoberstar/gradle-git-publish
+  description: "Gradle plugin to publish to a Git repo. (Replaces org.ajoberstar.github-pages plugin.)"
+- name: graclj
+  url: https://github.com/graclj/graclj
+  description: "Clojure plugin for Gradle's Software Model."
