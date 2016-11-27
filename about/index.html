@@ -15,7 +15,7 @@ title: Andrew Oberstar
                 {% for project in site.data.projects %}
                 <li class="mdl-list__item mdl-list__item--three-line">
                     <span class="mdl-list__item-primary-content">
-                        <i class="material-icons mdl-list__item-avatar">stars</i>
+                        <i class="material-icons mdl-list__item-avatar">{{ project.icon }}</i>
                         <a href="{{ project.url }}">{{ project.name }}</a>
                         <span class="mdl-list__item-text-body">
                             {{ project.description }}
