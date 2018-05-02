@@ -1,0 +1,173 @@
+/* switch to box-sizing as default */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*****************************************************************************/
+/* Fonts and Colors                                                          */
+/*****************************************************************************/
+/* base fonts */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #073642; /* Solarized base02 */
+    color: #839496; /* Solarized base0 */
+}
+
+/* general link handling */
+a, a:visited, a:hover {
+    color: #2aa198; /* Solarized cyan */
+    text-decoration: none;
+}
+
+/* nav colors */
+.ao-nav {
+    background-color: #002b36; /* Solarized base03 */
+}
+
+/* nav links */
+.ao-nav a, .ao-nav a:visited, .ao-nav a:hover {
+    color: #93a1a1; /* Solarized base1 */
+}
+
+/* nav brand */
+.ao-nav-brand {
+    font-weight: 200;
+    font-size: 1.25rem;
+}
+
+/* nav items */
+.ao-nav-item {
+    font-size: 0.9rem;
+}
+
+/* article background */
+article {
+    background-color: #002b36;
+}
+
+/* article title */
+article header h1 a:link, article header h1 a:visited, article header h1 a:hover {
+    color: #268bd2;
+    font-weight: 600;
+}
+
+/* article subtitle */
+article header h2 {
+    color: #586e75;
+    font-size: 1.1em;
+    font-weight: 200;
+}
+
+/* border color for footer */
+article footer {
+    border-color: #073642;
+}
+
+/* post tags */
+.ao-post-tag {
+    color: #6c71c4;
+    background-color: #073642;
+}
+
+/*****************************************************************************/
+/* Core Layout                                                               */
+/*****************************************************************************/
+/* grid for nav and main content */
+body {
+    display: grid;
+    grid-template-rows: 3rem 1fr;
+    grid-gap: 1rem;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+/* flex the nav sections (brand and links) */
+.ao-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.ao-nav nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* inline the nav items and space them out */
+.ao-nav-item {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+.ao-nav-item:first-of-type {
+    margin-left: 0;
+}
+
+.ao-nav-item:last-of-type {
+    margin-right: 0;
+}
+
+/* flex all articles */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* article sizing */
+article {
+    width: 100vw;
+    max-width: 900px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0.25rem;
+}
+
+/* remove margins around post headers */
+article header h1, article header h2 {
+    margin: 0;
+}
+
+/* border to separate footer from post */
+article footer {
+    border-top-width: 0.2rem;
+    border-top-style: solid;
+    padding-top: 1rem;
+}
+
+/* post tags */
+.ao-post-tag {
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+/* pad the sorce code blocks */
+div.highlight {
+    padding: 0.5rem;
+    overflow-x: auto;
+}
+
+/*****************************************************************************/
+/* Responsive Layout                                                         */
+/*****************************************************************************/
+@media screen and (max-width: 600px) {
+    /* let device handle size of nav */
+    body {
+        grid-template-rows: auto 1fr;
+    }
+    /* switch direction of nav flex */
+    .ao-nav {
+        flex-direction: column;
+    }
+    .ao-nav nav {
+        flex-direction: column;
+    }
+}

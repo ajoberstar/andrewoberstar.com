@@ -5,8 +5,6 @@ title: Andrew Oberstar
 {% for post in site.posts limit:3 %}
     {% include post.html full_content=true post=post %}
 {% endfor %}
-<nav class="item-nav mdl-cell mdl-cell--12-col">
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="/archive">
-        All Posts
-    </a>
+<nav>
+    <a href="/archive">All Posts</a>
 </nav>

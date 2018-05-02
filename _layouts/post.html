@@ -2,23 +2,20 @@
 layout: default
 ---
 {% include post.html full_content=true post=page %}
-<nav class="item-nav mdl-cell mdl-cell--12-col">
+<nav>
     {% if page.previous %}
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="{{ page.previous.url }}">
-        <i class="material-icons">chevron_left</i>Older Post
+    <a href="{{ page.previous.url }}">
+        🡰 Older Post
     </a>
     {% else %}
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="#" disabled>
-        <i class="material-icons">chevron_left</i>Older Post
-    </a>
+        🡰 Older Post
     {% endif %}
+    |
     {% if page.next %}
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="{{ page.next.url }}">
-        Newer Post<i class="material-icons">chevron_right</i>
+    <a href="{{ page.next.url }}">
+        Newer Post 🡲
     </a>
     {% else %}
-    <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="#" disabled>
-        Newer Post<i class="material-icons">chevron_right</i>
-    </a>
+        Newer Post 🡲
     {% endif %}
 </nav>
