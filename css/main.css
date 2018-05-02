@@ -100,10 +100,10 @@ body {
     align-items: center;
 }
 
-/* inline the nav items and space them out */
+/* space out the nav items */
 .ao-nav-item {
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .ao-nav-item:first-of-type {
