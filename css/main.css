@@ -87,6 +87,10 @@ div.highlight {
     box-shadow: 0.25rem 0.25rem 0.25rem -0.25rem #073642;  /* Solarized base02 */
 }
 
+pre.highlight {
+    font-family: 'Source Code Pro', monospace;
+}
+
 /*****************************************************************************/
 /* Core Layout                                                               */
 /*****************************************************************************/
@@ -162,6 +166,11 @@ article footer {
 div.highlight {
     padding: 0.5rem;
     overflow-x: auto;
+}
+
+/* remove margins */
+pre.highlight {
+    margin: 0;
 }
 
 /*****************************************************************************/
