@@ -6,7 +6,7 @@ category: technical
 tags:
     - raspberry pi
 ---
-For those of you unfamiliar, [Raspberry Pi](http://www.raspberrypi.org/) is an inexpensive computer that can run Linux and is about the size of a credit card. I think it was primarily designed for educational purposes, to get kids into computers, though it works well for a lot of other use cases. When I got mine, I started off with [Raspbmc](http://www.raspbmc.com/), the XBMC install for the Pi. I had a few issues and decided to stick with my existing Boxee Box for now.
+For those of you unfamiliar, [Raspberry Pi](http://www.raspberrypi.org/) is an inexpensive computer that can run Linux and is about the size of a credit card. I think it was primarily designed for educational purposes -- to get kids into computers -- though it works well for a lot of other use cases. When I got mine, I started off with [Raspbmc](http://www.raspbmc.com/), the XBMC install for the Pi. I had a few issues and decided to stick with my existing Boxee Box for now.
 
 My next project is going to be setting it up as an LDAP server to provide single sign on for my other Linux boxes and maybe trying to connect my Windows boxes to it as well. I'm also thinking about setting up DNS to have intranet domains (e.g. thinking of a .home TLD). I don't know much about configuring either of those or what the implications will be, so this will be a learning process.
 

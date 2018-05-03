@@ -11,7 +11,7 @@ Below is the letter I just sent to my representatives. Please send one to yours,
 
 > Senators Franken and Klobuchar and Representative McCollum,
 >
-> This is the first time I've personally written my representatives. This debt ceiling issue is absurd. I've heard many politicians say what "the American people" want. Yet many still act like what we really want is them to get reelected. Regardless of your qualifications, you are elected to represent us and make a difference. NOT to act solely to be reelected so you can make a difference tomorrow.
+> This is the first time I've personally written my representatives. This debt ceiling issue is absurd. I've heard many politicians say what "the American people" want. Yet many still act like what we really want is them to get re-elected. Regardless of your qualifications, you are elected to represent us and make a difference. NOT to act solely to be re-elected so you can make a difference tomorrow.
 >
 > I urge you to be fair and levelheaded on the issue of the deficit and the debt ceiling. Please work with your colleagues to raise (or abolish) the debt ceiling and to work towards a balanced budget that will reduce our deficit.
 >

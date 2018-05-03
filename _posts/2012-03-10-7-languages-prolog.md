@@ -8,7 +8,7 @@ tags:
     - programming languages
     - 7 Languages in 7 Weeks
 ---
-Next up in 7 Languages in 7 Weeks was [Prolog](http://en.wikipedia.org/wiki/Prolog).  This is a logic programming language.  Your "code" defines facts and rules, and then executes queries on them.  It's all declarative, you don't ever see the algorithm that Prolog uses.  It's a very different way of thinking, since you are just describing the problem, and asking Prolog to solve it for you.
+Next up in 7 Languages in 7 Weeks was [Prolog](http://en.wikipedia.org/wiki/Prolog). This is a logic programming language. Your "code" defines facts and rules, and then executes queries on them. It's all declarative, you don't ever see the algorithm that Prolog uses. It's a very different way of thinking, since you are just describing the problem, and asking Prolog to solve it for you.
 
 One of the challenges was to reverse a list in Prolog.
 
@@ -26,7 +26,7 @@ Here's some explanation of that:
 2. The reverse of a one item list of the same one item list.
 3. The reverse of a two or more element list is the reversal of elements 2 through the end followed by the first element.
 
-I had a hard time wrapping my head around this approach.  The third set of exercises was solving Sudoku and the 8 Queens problem.  The solution the author showed for a 4x4 solution was interesting, but it seemed way too tedious.
+I had a hard time wrapping my head around this approach. The third set of exercises was solving Sudoku and the 8 Queens problem. The solution the author showed for a 4x4 solution was interesting, but it seemed way too tedious.
 
 ```prolog
 valid([]).
@@ -58,10 +58,10 @@ sudoku(Puzzle, Solution) :-
         Square1, Square2, Square3, Square4]).
 ```
 
-The exercise was to expand that solution for 6x6 and 9x9.  That would have either meant a lot of typing and no thinking or an extreme amount of thinking trying to generalize a solution.  I just didn't grasp the though process required for Prolog enough to try that.
+The exercise was to expand that solution for 6x6 and 9x9. That would have either meant a lot of typing and no thinking or an extreme amount of thinking trying to generalize a solution. I just didn't grasp the though process required for Prolog enough to try that.
 
-Prolog has some fascinating use cases.  At the beginning of the chapter, the author interviewed someone who had writting a masters thesis on predicting the behavior of a trained dolphin, given the rules the dolphin was taught. Apparently, Prolog also has a lot of use in natural language processing, with the IBM Watson computer even being partially written in it.
+Prolog has some fascinating use cases. At the beginning of the chapter, the author interviewed someone who had writing a masters thesis on predicting the behavior of a trained dolphin, given the rules the dolphin was taught. Apparently, Prolog also has a lot of use in natural language processing, with the IBM Watson computer even being partially written in it.
 
-The end result is that Prolog doesn't click for me.  I would need a lot more time with it, than I want to spend.  Especially considering I don't see any direct use cases for Prolog in the stuff I like to play around with.
+The end result is that Prolog doesn't click for me. I would need a lot more time with it than I want to spend. Especially considering I don't see any direct use cases for Prolog in the stuff I like to play around with.
 
 Next up is Scala.

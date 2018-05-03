@@ -12,7 +12,7 @@ Once I got Raspbian installed, I started to look into setting up the DNS server,
 
 The final process I went through isn't Raspberry Pi specific, it should work on at least any Debian-based system.
 
-I would also like to preface this by saying I am not a networking expert, so this post reflects my layman's understanding of what I ended up configuring
+I would also like to preface this by saying I am not a networking expert, so this post reflects my layman's understanding of what I ended up configuring.
 
 ## DNS Software
 
@@ -37,7 +37,9 @@ The recommendation was to stick with a domain you already own and designate a su
 
 Through the magic of Debian, installing dnsmasq is as simple as:
 
-    sudo apt-get install dnsmasq
+```
+sudo apt-get install dnsmasq
+```
 
 ## Configuration
 
@@ -53,28 +55,34 @@ This configures how the DNS server and the DHCP provider (if enabled) should beh
 
 Some domain lookups are essentially guaranteed to come up empty on the wider Internet. You can disable forwarding of them with the following lines:
 
-    # won't forward unqualified names (e.g. myserver)
-    domain-needed
+```
+# won't forward unqualified names (e.g. myserver)
+domain-needed
 
-    # won't forward some non-routed addresses
-    bogus-priv
+# won't forward some non-routed addresses
+bogus-priv
 
-    # won't forward requests for your intranet subdomain
-    local=/lan.mydomain.com/
+# won't forward requests for your intranet subdomain
+local=/lan.mydomain.com/
+```
 
 That last one is key. It forces that subdomain to be resolved only via internal config: the hosts file or DHCP clients.
 
 To specify the root subdomain for your intranet, use the following two options:
 
-    # append the domain (below) to all hosts in the hosts file
-    expand-hosts
+```
+# append the domain (below) to all hosts in the hosts file
+expand-hosts
 
-    # appended to DHCP hosts and, if above option specified, to hosts from static IPs
-    domain=lan.mydomain.com
+# appended to DHCP hosts and, if above option specified, to hosts from static IPs
+domain=lan.mydomain.com
+```
 
 If you want to use the `/etc/ethers` file (see section farther down) add this option:
 
-    read-ethers
+```
+read-ethers
+```
 
 The rest is DHCP config. I copied it from my router's dnsmasq config, so I don't know much about all of the options.
 
