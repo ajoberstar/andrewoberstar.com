@@ -150,12 +150,11 @@ article header h1, article header h2 {
 
 /* border to separate footer from post */
 article footer {
-    padding-top: 1rem;
+    padding-top: 0.5rem;
 }
 
 /* post tags */
 .ao-post-tag {
-    padding: 0.25rem;
     margin-right: 0.5rem;
 }
 
