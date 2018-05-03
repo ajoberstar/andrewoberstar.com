@@ -13,8 +13,8 @@ html {
 /* base fonts */
 body {
     font-family: 'Open Sans', sans-serif;
-    background-color: #073642; /* Solarized base02 */
-    color: #839496; /* Solarized base0 */
+    background-color: #fdf6e3; /* Solarzed base3 */
+    color: #657b83; /* Solarzed base00 */
 }
 
 /* general link handling */
@@ -25,12 +25,14 @@ a, a:visited, a:hover {
 
 /* nav colors */
 .ao-nav {
-    background-color: #002b36; /* Solarized base03 */
+    background-color: #fdf6e3; /* Solarzed base3 */
+    border-bottom: 0.1rem #eee8d5 solid; /* Solarized base2 */
+    box-shadow: 0 0.5rem 0.5rem -0.5rem #eee8d5; /* Solarzed base2 */
 }
 
 /* nav links */
 .ao-nav a, .ao-nav a:visited, .ao-nav a:hover {
-    color: #93a1a1; /* Solarized base1 */
+    color: #586e75; /* Solarized base01 */
 }
 
 /* nav brand */
@@ -46,31 +48,43 @@ a, a:visited, a:hover {
 
 /* article background */
 article {
-    background-color: #002b36;
+    background-color: #fdf6e3; /* Solarized base3 */
+    border: 0.1rem #eee8d5 solid; /* Solarized base2 */
+    border-radius: 0.25rem;
+    box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem #eee8d5; /* Solarzed base2 */
 }
 
 /* article title */
 article header h1 a:link, article header h1 a:visited, article header h1 a:hover {
-    color: #268bd2;
+    color: #268bd2; /* Solarized blue */
     font-weight: 600;
 }
 
 /* article subtitle */
 article header h2 {
-    color: #586e75;
+    color: #93a1a1; /* Solarized base1 */
     font-size: 1.1em;
     font-weight: 200;
 }
 
 /* border color for footer */
 article footer {
-    border-color: #073642;
+    border-top: 0.1rem #eee8d5 solid; /* Solarized base2 */
 }
 
 /* post tags */
 .ao-post-tag {
-    color: #6c71c4;
-    background-color: #073642;
+    color: #6c71c4; /* Solarized violet */
+}
+
+body > main > nav a, body > main > nav a:visited, body > main > nav a:hover {
+    color: #b58900; /* Solarized yellow */
+}
+
+div.highlight {
+    border: 0.1rem #073642 solid; /* Solarized base02 */
+    border-radius: 0.25rem;
+    box-shadow: 0.25rem 0.25rem 0.25rem -0.25rem #073642;  /* Solarized base02 */
 }
 
 /*****************************************************************************/
@@ -127,7 +141,6 @@ article {
     max-width: 900px;
     padding: 1rem;
     margin-bottom: 1.5rem;
-    border-radius: 0.25rem;
 }
 
 /* remove margins around post headers */
@@ -137,14 +150,11 @@ article header h1, article header h2 {
 
 /* border to separate footer from post */
 article footer {
-    border-top-width: 0.2rem;
-    border-top-style: solid;
     padding-top: 1rem;
 }
 
 /* post tags */
 .ao-post-tag {
-    border-radius: 0.5rem;
     padding: 0.5rem;
     margin-right: 0.5rem;
 }
