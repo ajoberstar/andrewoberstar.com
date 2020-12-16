@@ -13,20 +13,10 @@ jobs:
           cli: "1.10.1.763"
       - name: Checkout Source
         uses: actions/checkout@v2
-      - name: Checkout Pages
-        uses: actions/checkout@v2
-        with:
-          ref: gh-pages
-          path: public
-      - name: Clear existing content
-        run: rm -rf public/*
       - name: Build site
         run: clojure -M:build
-      - name: Add changes to Git
-        run: git add -A
-        working-directory: public
-      - name: Add changes to Git
-        run: git commit -m 'Cryogen site build'
-        working-directory: public
-      - name: Push changes to Git
-        run: git push origin
+      - name: Publish to Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
