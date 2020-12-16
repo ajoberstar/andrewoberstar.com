@@ -1,5 +1,0 @@
-title: Andrew Oberstar, Unoriginal Thoughts and Titles
-markdown: kramdown
-permalink: /blog/:year/:i_month/:i_day/:title
-plugins:
-    - jekyll-sitemap
