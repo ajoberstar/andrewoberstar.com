@@ -21,7 +21,7 @@ jobs:
       - name: Clear existing content
         run: rm -rf public/*
       - name: Build site
-        run: clojure -X:build
+        run: clojure -M:build
       - name: Add changes to Git
         run: git add -A
         working-directory: public
