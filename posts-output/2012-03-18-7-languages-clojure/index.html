@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Andrew Oberstar: 7 Languages: Clojure</title>
+    
+<meta name="keywords" content="erlang,scala,clojure,programming languages,political,prolog,technical,haskell,io,php,gradle,ruby,netflix prize,raspberry pi,7 Languages in 7 Weeks">
+
+<meta name="description" content="Oooooo.... Clojure. Along with Scala, this was one of my most anticipated languages (mainly because of the JVM integration). Clojure is a dialect of Lisp, which is a very old family of programming languages. Most of the syntax is just parentheses.For the xkcd fans:">
+
+<meta property="og:description" content="Oooooo.... Clojure. Along with Scala, this was one of my most anticipated languages (mainly because of the JVM integration). Clojure is a dialect of Lisp, which is a very old family of programming languages. Most of the syntax is just parentheses.For the xkcd fans:">
+
+<meta property="og:url" content="https://andrewoberstar.com/posts-output/2012-03-18-7-languages-clojure/" />
+<meta property="og:title" content="7 Languages: Clojure" />
+<meta property="og:type" content="article" />
+
+    <link rel="canonical" href="https://andrewoberstar.com/posts-output/2012-03-18-7-languages-clojure/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Andrew Oberstar</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/">Home</a></li>
+                <li
+                ><a href="/archives/">Archives</a></li>
+                
+                <li
+                >
+                <a href="/pages-output/about/">About</a>
+                </li>
+                
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">March 18, 2012</div>
+        
+    </div>
+    <h2>7 Languages: Clojure</h2>
+</div>
+<div>
+    
+    <p>Oooooo.... <a href="http://en.wikipedia.org/wiki/Clojure">Clojure</a>. Along with Scala, this was one of my most anticipated languages (mainly because of the JVM integration). Clojure is a dialect of Lisp, which is a very old family of programming languages. Most of the syntax is just parentheses.</p><p>For the <a href="http://xkcd.com/297/">xkcd</a> fans:</p><p><img src="http://imgs.xkcd.com/comics/lisp_cycles.png" alt="xkcd" /></p><p>I've wanted to try a Lisp for a while and Clojure seems like the most practical one. Clojure is another functional language, though it's not considered "pure" since it does allow some side-effects. As I said above, the syntax pretty much just parantheses grounping function calls.</p><pre><code class="clojure">;; create a list of numbers
+(list 1 2 3 4 5)
+;; define a value
+(def stuff (list 1 2 3))
+;; prefix notation
+(+ 1 2)
+;; map function that doubles each element in the list
+(map #(* 2 %) stuff)
+</code></pre><p>Beyond trying to mentally parse all of those parens, the prefix notation can get a little confusing. Instead of saying <code>(1 + 2)</code> you have to say <code>(+ 1 2)</code>. In Io you passed a message to an object. In Clojure you pass arguments to a function. Even things like if statements have been turned into functions.</p><pre><code class="clojure">(if (= 3 (count stuff))
+  (println "If is a function!")
+  (println "That should have worked."))
+</code></pre><p>Another cool thing about Lisps in general is that everything is essentially a list. The code is data and the data is code. You can write macros that allow you to create new language constructs:</p><pre><code class="clojure">(defmacro unless
+  [test body else]
+  (list 'if (list 'not test) body else))
+</code></pre><p>Clojure also has a strong concurrency focus. While, as with most functional languages, you should try to stick with immutability, you can still use mutable state in a safe way. Clojure implements a thing they call Software Transactional Memory (STM), which is basically the equivalent of a database transaction for your application's objects in memory.</p><p>There's a lot of cool concurrency stuff in Clojure, but I don't understand it well enough to summarize it.</p><p>Clojure is really fascinating. It's a very different way of programming, but one that didn't crush my head into pulp like Prolog did. I'm looking forward to playing around with this language more in the future.</p><p>One final installment to come: Haskell.</p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags-output/clojure/">clojure</a>
+    
+    <a href="/tags-output/programming%20languages/">programming languages</a>
+    
+    <a href="/tags-output/technical/">technical</a>
+    
+    <a href="/tags-output/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts-output/2012-03-18-7-languages-erlang/">&laquo; 7 Languages: Erlang</a>
+        
+        
+        <a class="right" href="/posts-output/2012-03-13-7-languages-scala/">7 Languages: Scala &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="https://carmen.la/blog/archives/">Carmen's Blog</a></li>
+                    
+                    <li><a href="/pages-output/another-page/">Another Page</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/posts-output/2016-11-19-sample/">Testing...</a></li>
+                        
+                        <li><a href="/posts-output/2014-11-06-drinking-the-clojure-kool-aid/">Drinking the Clojure Kool-Aid</a></li>
+                        
+                        <li><a href="/posts-output/2014-09-28-quick-gradle-tip-setting-bintray-attributes-for-gradle-plugins/">Quick Gradle Tip - Setting Bintray Attributes for Gradle Plugins</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+                <div id="tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        
+                        <li><a href="/tags-output/erlang/">erlang</a></li>
+                        
+                        <li><a href="/tags-output/scala/">scala</a></li>
+                        
+                        <li><a href="/tags-output/clojure/">clojure</a></li>
+                        
+                        <li><a href="/tags-output/programming%20languages/">programming languages</a></li>
+                        
+                        <li><a href="/tags-output/political/">political</a></li>
+                        
+                        <li><a href="/tags-output/prolog/">prolog</a></li>
+                        
+                        <li><a href="/tags-output/technical/">technical</a></li>
+                        
+                        <li><a href="/tags-output/haskell/">haskell</a></li>
+                        
+                        <li><a href="/tags-output/io/">io</a></li>
+                        
+                        <li><a href="/tags-output/php/">php</a></li>
+                        
+                        <li><a href="/tags-output/gradle/">gradle</a></li>
+                        
+                        <li><a href="/tags-output/ruby/">ruby</a></li>
+                        
+                        <li><a href="/tags-output/netflix%20prize/">netflix prize</a></li>
+                        
+                        <li><a href="/tags-output/raspberry%20pi/">raspberry pi</a></li>
+                        
+                        <li><a href="/tags-output/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2020 Andrew Oberstar
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="application/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>

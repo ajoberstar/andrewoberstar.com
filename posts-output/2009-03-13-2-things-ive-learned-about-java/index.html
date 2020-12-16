@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Andrew Oberstar: Things I&#39;ve Learned About Java</title>
+    
+<meta name="keywords" content="erlang,scala,clojure,programming languages,political,prolog,technical,haskell,io,php,gradle,ruby,netflix prize,raspberry pi,7 Languages in 7 Weeks">
+
+<meta name="description" content="Doing a project with this scale of data (100 million ratings, by 480189 users, on 17770 movies) shows a person just how much they don&#39;t know about programming yet.Here&#39;s a few things I&#39;ve learned so far:">
+
+<meta property="og:description" content="Doing a project with this scale of data (100 million ratings, by 480189 users, on 17770 movies) shows a person just how much they don&#39;t know about programming yet.Here&#39;s a few things I&#39;ve learned so far:">
+
+<meta property="og:url" content="https://andrewoberstar.com/posts-output/2009-03-13-2-things-ive-learned-about-java/" />
+<meta property="og:title" content="Things I&#39;ve Learned About Java" />
+<meta property="og:type" content="article" />
+
+    <link rel="canonical" href="https://andrewoberstar.com/posts-output/2009-03-13-2-things-ive-learned-about-java/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link href="/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Andrew Oberstar</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/">Home</a></li>
+                <li
+                ><a href="/archives/">Archives</a></li>
+                
+                <li
+                >
+                <a href="/pages-output/about/">About</a>
+                </li>
+                
+                <li><a href="/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">March 13, 2009</div>
+        
+    </div>
+    <h2>Things I&#39;ve Learned About Java</h2>
+</div>
+<div>
+    
+    <p>Doing a project with this scale of data (100 million ratings, by 480189 users, on 17770 movies) shows a person just how much they don't know about programming yet.</p><p>Here's a few things I've learned so far:</p><ol><li><p><strong>Objects take up a crap ton of memory.</strong></p><p>You don't realize this when you're just making you're little Person objects in class, but when you try and fit 100 million ratings in memory, objects are not your friend. It's all about arrays of primitive types.</p></li><li><p><strong>Integers take up way too much space.</strong></p><p>Even the relatively small, programmer abused <code>int</code> type will make you cry when you try to do this. Had to use <code>short</code> for movie ids and <code>byte</code> for ratings.</p></li><li><p><strong>Doubles are stupid.</strong></p><p>I never knew this but double math in Java is really imprecise. I don't have much choice (both speed and memory wise) but to use them, but adding simple decimals comes out really goofy. Google "java double arithmetic" and see the madness.</p></li><li><p>Java does not pass by reference.</p><p>It passes references by value. (I had heard this before but never ran into a problem with it until now) You may say, "What the heck does that mean?"  Well, for example take a <code>Dog</code> object called <code>fido</code> and pass it to a method that takes a <code>Dog</code> parameter. Let's say it's called <code>goofy</code> in the method. Right now <code>fido</code> and <code>goofy</code> point to the same thing. If you change something in the <code>goofy</code> object it will change the same thing in the <code>fido</code> object, because they're the same object. But if you say <code>goofy = new Dog();</code>  or <code>goofy = null</code> they no longer point to the same thing. <code>fido</code> still points where it did but now <code>goofy</code> points to something else.</p><p>That doesn't seem like too much of a problem, but... I had an array of 48,000 <code>PrintWriter</code> objects as I was trying to reorganize the data. At the end of each run I used  a for each (<code>for (PrintWriter print : outputArray)</code>) to set them all to null, so they could be reused in the next run. But since each element in that array was set into a newly declared <code>print</code> variable, setting <code>print = null</code> didn't set <code>outputArray[i] = null</code>. So a wasted hour or two of running the sorting program.</p></li></ol><p>That's all I have for now, but I'm sure I'll be posting about this again.</p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/tags-output/technical/">technical</a>
+    
+    <a href="/tags-output/netflix%20prize/">netflix prize</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/posts-output/2009-03-13-3-matrix-factorization/">&laquo; Matrix Factorization</a>
+        
+        
+        <a class="right" href="/posts-output/2009-03-13-4-success-relatively/">Success (Relatively) &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="https://carmen.la/blog/archives/">Carmen's Blog</a></li>
+                    
+                    <li><a href="/pages-output/another-page/">Another Page</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/posts-output/2016-11-19-sample/">Testing...</a></li>
+                        
+                        <li><a href="/posts-output/2014-11-06-drinking-the-clojure-kool-aid/">Drinking the Clojure Kool-Aid</a></li>
+                        
+                        <li><a href="/posts-output/2014-09-28-quick-gradle-tip-setting-bintray-attributes-for-gradle-plugins/">Quick Gradle Tip - Setting Bintray Attributes for Gradle Plugins</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+                <div id="tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        
+                        <li><a href="/tags-output/erlang/">erlang</a></li>
+                        
+                        <li><a href="/tags-output/scala/">scala</a></li>
+                        
+                        <li><a href="/tags-output/clojure/">clojure</a></li>
+                        
+                        <li><a href="/tags-output/programming%20languages/">programming languages</a></li>
+                        
+                        <li><a href="/tags-output/political/">political</a></li>
+                        
+                        <li><a href="/tags-output/prolog/">prolog</a></li>
+                        
+                        <li><a href="/tags-output/technical/">technical</a></li>
+                        
+                        <li><a href="/tags-output/haskell/">haskell</a></li>
+                        
+                        <li><a href="/tags-output/io/">io</a></li>
+                        
+                        <li><a href="/tags-output/php/">php</a></li>
+                        
+                        <li><a href="/tags-output/gradle/">gradle</a></li>
+                        
+                        <li><a href="/tags-output/ruby/">ruby</a></li>
+                        
+                        <li><a href="/tags-output/netflix%20prize/">netflix prize</a></li>
+                        
+                        <li><a href="/tags-output/raspberry%20pi/">raspberry pi</a></li>
+                        
+                        <li><a href="/tags-output/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2020 Andrew Oberstar
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/highlight.pack.js" type="application/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
