@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Andrew Oberstar: Relearning PHP</title>
+    
+<meta name="keywords" content="erlang,scala,clojure,programming languages,political,prolog,technical,haskell,io,php,gradle,ruby,netflix prize,raspberry pi,7 Languages in 7 Weeks">
+
+<meta name="description" content="Very little of my programming life has been outside of the JVM world. Java was the primary language at my college, and is the primary language at my workplace. Recently, I&#39;ve gotten into Groovy, which is a dynamic language for the JVM. I dabbled a small amount in C++ and PHP, but didn&#39;t stick with them.I recently began collaborating with a friend on a website, so I&#39;ve been trying to relearn PHP which is our common denominator. I read through most of the manual on php.net, but needed something that gave a little more">
+
+<meta property="og:description" content="Very little of my programming life has been outside of the JVM world. Java was the primary language at my college, and is the primary language at my workplace. Recently, I&#39;ve gotten into Groovy, which is a dynamic language for the JVM. I dabbled a small amount in C++ and PHP, but didn&#39;t stick with them.I recently began collaborating with a friend on a website, so I&#39;ve been trying to relearn PHP which is our common denominator. I read through most of the manual on php.net, but needed something that gave a little more">
+
+<meta property="og:url" content="https://andrewoberstar.com/blog/posts-output/2012-02-28-relearning-php/" />
+<meta property="og:title" content="Relearning PHP" />
+<meta property="og:type" content="article" />
+
+    <link rel="canonical" href="https://andrewoberstar.com/blog/posts-output/2012-02-28-relearning-php/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="//fonts.googleapis.com/css?family=Alegreya:400italic,700italic,400,700" rel="stylesheet"
+          type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+    <link href="/blog/css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/blog/">Andrew Oberstar</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li ><a href="/blog/">Home</a></li>
+                <li
+                ><a href="/blog/archives/">Archives</a></li>
+                
+                <li
+                >
+                <a href="/blog/pages-output/about/">About</a>
+                </li>
+                
+                <li><a href="/blog/feed.xml">RSS</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+</nav>
+
+
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-9">
+            <div id="content">
+                
+<div id="post">
+    <div class="post-header">
+    <div id="post-meta" class="row">
+        <div class="col-lg-6">February 28, 2012</div>
+        
+    </div>
+    <h2>Relearning PHP</h2>
+</div>
+<div>
+    
+    <p>Very little of my programming life has been outside of the JVM world. Java was the primary language at my college, and is the primary language at my workplace. Recently, I've gotten into Groovy, which is a dynamic language for the JVM. I dabbled a small amount in C++ and PHP, but didn't stick with them.</p><p>I recently began collaborating with a friend on a website, so I've been trying to relearn PHP which is our common denominator. I read through most of the manual on php.net, but needed something that gave a little more</p><p>In general, I have a bad view of PHP as an Object Oriented language. This mainly stems from its beginnings as a simple scripting language and having objects tacked on once people started using it for more complex use cases. PHP's OO capabilities just don't seem mature to me. I've only been developing in PHP for about a week (with not a whole lot of code generated), but I loath it. I'm sure a large factor is my background in Java, which makes many aspects of PHP sit funny with me.</p><ul><li>Dynamic typing:
+<ul><li>Groovy has dynamic types too, but, in practice, I usually specify my types. It is a rare case for me where I want the flexibility of a dynamic type at the cost of the clarity a specified type provides. You can't really program to an interface when you could theoretically return anything from any method.</li><li>Not being able to specify the return types of methods makes it very hard for me to understand what's going on at a glance.</li></ul></li><li>Automatic conversions based on context:
+<ul><li>Again something that Groovy does, but I have a better grasp of the semantics with Groovy. Chalk that up to lack of experience with PHP.</li></ul></li><li>Lacking per-application module use (at least from my understanding):
+<ul><li>In JVM languages you add a JAR to your classpath in order to use a module/library. This gives you a lot of flexibility in per-application dependency management and portability.</li><li>PHP seems to require that you install modules in a per-installation extensions directory. At least for me, this causes a lot of config issues when moving between servers.</li></ul></li><li>Clumsy file/module/class inclusion:
+<ul><li>Yet another Java bias... I like the fact that Java gives me automatic access to any class that is present on the classpath. I don't want to use a require directive to specify the specific file I should load from.</li><li>I could write an autoloading block, but why should I have to do that when I feel the interpreter could handle that for me if given a classpath-like input.</li></ul></li></ul><p>I do still want to expand my language horizons, though I don't plan on PHP being anything more than a short-term part of that. I'm considering picking up <a href="http://www.amazon.com/Seven-Languages-Weeks-Programming-Programmers/dp/193435659X">7 Languages in 7 Weeks</a> in the next few months. The goal of this book is to give you an intro-level flavor of seven languages: Ruby, Io, Prolog, Scala, Erlang, Clojure, Haskell. That seems like it would be a good starting point on finding a new language to make a deeper dive into.</p>
+</div>
+
+<div id="post-tags">
+    <b>Tags: </b>
+    
+    <a href="/blog/tags-output/programming%20languages/">programming languages</a>
+    
+    <a href="/blog/tags-output/technical/">technical</a>
+    
+    <a href="/blog/tags-output/php/">php</a>
+    
+</div>
+
+
+    <div id="prev-next">
+        
+        <a href="/blog/posts-output/2012-03-08-7-languages-ruby/">&laquo; 7 Languages: Ruby</a>
+        
+        
+        <a class="right" href="/blog/posts-output/2012-01-12-civility/">Civility &raquo;</a>
+        
+    </div>
+
+    
+
+
+</div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div id="sidebar">
+                <h3>Links</h3>
+                <ul id="links">
+                    <li><a href="http://cryogenweb.org/docs/home.html">Cryogen Docs</a></li>
+                    <li><a href="https://carmen.la/blog/archives/">Carmen's Blog</a></li>
+                    
+                    <li><a href="/blog/pages-output/another-page/">Another Page</a></li>
+                    
+                </ul>
+                
+                <div id="recent">
+                    <h3>Recent Posts</h3>
+                    <ul>
+                        
+                        <li><a href="/blog/posts-output/2016-11-19-sample/">Testing...</a></li>
+                        
+                        <li><a href="/blog/posts-output/2014-11-06-drinking-the-clojure-kool-aid/">Drinking the Clojure Kool-Aid</a></li>
+                        
+                        <li><a href="/blog/posts-output/2014-09-28-quick-gradle-tip-setting-bintray-attributes-for-gradle-plugins/">Quick Gradle Tip - Setting Bintray Attributes for Gradle Plugins</a></li>
+                        
+                    </ul>
+                </div>
+                
+                
+                <div id="tags">
+                    <h3>Tags</h3>
+                    <ul>
+                        
+                        <li><a href="/blog/tags-output/erlang/">erlang</a></li>
+                        
+                        <li><a href="/blog/tags-output/scala/">scala</a></li>
+                        
+                        <li><a href="/blog/tags-output/clojure/">clojure</a></li>
+                        
+                        <li><a href="/blog/tags-output/programming%20languages/">programming languages</a></li>
+                        
+                        <li><a href="/blog/tags-output/political/">political</a></li>
+                        
+                        <li><a href="/blog/tags-output/prolog/">prolog</a></li>
+                        
+                        <li><a href="/blog/tags-output/technical/">technical</a></li>
+                        
+                        <li><a href="/blog/tags-output/haskell/">haskell</a></li>
+                        
+                        <li><a href="/blog/tags-output/io/">io</a></li>
+                        
+                        <li><a href="/blog/tags-output/php/">php</a></li>
+                        
+                        <li><a href="/blog/tags-output/gradle/">gradle</a></li>
+                        
+                        <li><a href="/blog/tags-output/ruby/">ruby</a></li>
+                        
+                        <li><a href="/blog/tags-output/netflix%20prize/">netflix prize</a></li>
+                        
+                        <li><a href="/blog/tags-output/raspberry%20pi/">raspberry pi</a></li>
+                        
+                        <li><a href="/blog/tags-output/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
+                        
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>Copyright &copy; 2020 Andrew Oberstar
+        <p style="text-align: center;">Powered by <a href="http://cryogenweb.org">Cryogen</a></p></footer>
+</div>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="/blog/js/highlight.pack.js" type="application/javascript"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+</html>
