@@ -7,6 +7,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup Clojure CLI
+        uses: DeLaGuardo/setup-clojure@3.0
+        with:
+          cli: "1.10.1.763"
       - name: Checkout Source
         uses: actions/checkout@v2
       - name: Checkout Pages
