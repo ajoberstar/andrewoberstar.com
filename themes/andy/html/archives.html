@@ -1,0 +1,24 @@
+{% extends "/html/base.html" %}
+{%block subtitle %}: Archives{% endblock %}
+{% block content %}
+<section class="">
+    <header>
+        <h1>Archives</h1>
+    </header>
+    {% for group in groups %}
+    <section>
+        <header>
+            <h1>{{group.group}}</h1>
+        </header>
+        <ul>
+            {% for post in group.posts %}
+            <li>
+                <time datetime="{{post.date|date:yyyy-MM-dd}}">{{post.date|date:"MMM dd"}}</time> - <a
+                    href="{{post.uri}}">{{post.title}}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </section>
+    {% endfor %}
+</section>
+{% endblock %}

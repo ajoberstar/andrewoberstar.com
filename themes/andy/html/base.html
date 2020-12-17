@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{title}}{% block subtitle %}{% endblock %}</title>
+
+    {% block meta %}
+    <meta name="description" content="{{description}}">
+    <meta name="keywords" content="">
+    {% endblock %}
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="alternate" type="application/atom+xml" title="Posts" href="/feed.xml">
+
+    {% script "js/highlight.pack.js" %}
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    {% style "css/main.css" %}
+    {% style "css/solarized-dark.css" %}
+</head>
+
+<body>
+    <header id="main-header">
+        <a id="brand" href="{{index-uri}}">{{title}}</a>
+        <nav>
+            <li {% if home %} class="active" {% endif %}><a href="{{index-uri}}">Home</a></li>
+            <li {% if archives %} class="active" {% endif %}><a href="{{archives-uri}}">Archives</a></li>
+            {% for nav-page in navbar-pages %}
+            <li {%ifequal page.uri nav-page.uri %} class="active" {% endifequal %}>
+                <a href="{{nav-page.uri}}">{{nav-page.title}}</a>
+            </li>
+            {% endfor %}
+            <li><a href="{{rss-uri}}">RSS</a></li>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer id="main-footer">
+        <nav>
+            {% for tag in tags %}
+            <li><a href="{{tag.uri}}">{{tag.name}}</a></li>
+            {% endfor %}
+        </nav>
+        <p>Copyright &copy; {{today|date:yyyy}} {{author}}</p>
+        <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+    </footer>
+</body>
+
+</html>

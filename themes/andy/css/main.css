@@ -1,191 +1,70 @@
-/* switch to box-sizing as default */
-html {
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("/fonts/CascadiaCode.woff2") format("woff2");
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+:root {
+  --background-color: blue;
+  --foreground-color: yellow;
+  --link-color: green;
+  --top-nav-background-color: orange;
+  --top-nav-shadow-color: red;
+  --nav-link-color: purple;
 }
 
-/*****************************************************************************/
-/* Fonts and Colors                                                          */
-/*****************************************************************************/
-/* base fonts */
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: #fdf6e3; /* Solarzed base3 */
-    color: #657b83; /* Solarzed base00 */
+  font-family: 'Open Sans', sans-serif;
 }
 
-/* general link handling */
-a, a:visited, a:hover {
-    color: #2aa198; /* Solarized cyan */
-    text-decoration: none;
+code {
+  font-family: "Cascadia Code", "Courier New", monospace;
 }
 
-/* nav colors */
-.ao-nav {
-    background-color: #fdf6e3; /* Solarzed base3 */
-    border-bottom: 0.1rem #eee8d5 solid; /* Solarized base2 */
-    box-shadow: 0 0.5rem 0.5rem -0.5rem #eee8d5; /* Solarzed base2 */
-}
-
-/* nav links */
-.ao-nav a, .ao-nav a:visited, .ao-nav a:hover {
-    color: #586e75; /* Solarized base01 */
-}
-
-/* nav brand */
-.ao-nav-brand {
-    font-weight: 200;
-    font-size: 1.25rem;
-}
-
-/* nav items */
-.ao-nav-item {
-    font-size: 0.9rem;
-}
-
-/* article background */
-article {
-    background-color: #fdf6e3; /* Solarized base3 */
-    border: 0.1rem #eee8d5 solid; /* Solarized base2 */
-    border-radius: 0.25rem;
-    box-shadow: 0.5rem 0.5rem 0.5rem -0.5rem #eee8d5; /* Solarzed base2 */
-}
-
-/* article title */
-article header h1 a:link, article header h1 a:visited, article header h1 a:hover {
-    color: #268bd2; /* Solarized blue */
-    font-weight: 600;
-}
-
-/* article subtitle */
-article header h2 {
-    color: #93a1a1; /* Solarized base1 */
-    font-size: 1.1em;
-    font-weight: 200;
-}
-
-/* border color for footer */
-article footer {
-    border-top: 0.1rem #eee8d5 solid; /* Solarized base2 */
-}
-
-/* post tags */
-.ao-post-tag {
-    color: #6c71c4; /* Solarized violet */
-}
-
-body > main > nav a, body > main > nav a:visited, body > main > nav a:hover {
-    color: #b58900; /* Solarized yellow */
-}
-
-div.highlight {
-    border: 0.1rem #073642 solid; /* Solarized base02 */
-    border-radius: 0.25rem;
-    box-shadow: 0.25rem 0.25rem 0.25rem -0.25rem #073642;  /* Solarized base02 */
-}
-
-pre.highlight {
-    font-family: 'Source Code Pro', monospace;
-}
-
-/*****************************************************************************/
-/* Core Layout                                                               */
-/*****************************************************************************/
-/* grid for nav and main content */
 body {
-    display: grid;
-    grid-template-rows: 3rem 1fr;
-    grid-gap: 1rem;
-    margin: 0;
-    margin-bottom: 1rem;
+  display: grid;
+  grid-template-rows: 3rem 1fr 3rem;
+  grid-gap: 1rem;
+  /* margin: 0; */
+  /* margin-bottom: 1rem; */
 }
 
-/* flex the nav sections (brand and links) */
-.ao-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 }
 
-.ao-nav nav {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
+#main-header nav, #main-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
 }
 
-/* space out the nav items */
-.ao-nav-item {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+#main-header nav li, #main-footer nav li {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
-.ao-nav-item:first-of-type {
-    margin-left: 0;
+#main-header nav li:first-of-type {
+  margin-left: 0;
 }
 
-.ao-nav-item:last-of-type {
-    margin-right: 0;
+#main-header nav li:last-of-type {
+  margin-right: 0;
 }
 
-/* flex all articles */
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100vw;
+  max-width: 900px;
 }
 
-/* article sizing */
-article {
-    width: 100vw;
-    max-width: 900px;
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-/* remove margins around post headers */
-article header h1, article header h2 {
-    margin: 0;
-}
-
-/* border to separate footer from post */
-article footer {
-    padding-top: 0.5rem;
-}
-
-/* post tags */
-.ao-post-tag {
-    margin-right: 0.5rem;
-}
-
-/* pad the sorce code blocks */
-div.highlight {
-    padding: 0.5rem;
-    overflow-x: auto;
-}
-
-/* remove margins */
-pre.highlight {
-    margin: 0;
-}
-
-/*****************************************************************************/
-/* Responsive Layout                                                         */
-/*****************************************************************************/
-@media screen and (max-width: 600px) {
-    /* let device handle size of nav */
-    body {
-        grid-template-rows: auto 1fr;
-    }
-    /* switch direction of nav flex */
-    .ao-nav {
-        flex-direction: column;
-    }
-    .ao-nav nav {
-        flex-direction: column;
-    }
+#main-footer {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
