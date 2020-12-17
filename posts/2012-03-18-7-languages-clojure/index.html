@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Andrew Oberstar: 7 Languages: Clojure</title>
+
+    
+<meta name="keywords" content="erlang,scala,clojure,programming languages,political,prolog,technical,haskell,io,php,gradle,ruby,netflix prize,raspberry pi,7 Languages in 7 Weeks">
+
+<meta name="description" content="Oooooo.... Clojure. Along with Scala, this was one of my most anticipated languages (mainly because of the JVM integration). Clojure is a dialect of Lisp, which is a very old family of programming languages. Most of the syntax is just parentheses.For the xkcd fans:">
+
+
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="alternate" type="application/atom+xml" title="Posts" href="/feed.xml">
+
+    <script src="/js/highlight.pack.js" type="application/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/solarized-dark.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header id="main-header">
+        <a id="brand" href="/">Andrew Oberstar</a>
+        <nav>
+            <li ><a href="/">Home</a></li>
+            <li ><a href="/archives/">Archives</a></li>
+            
+            <li >
+                <a href="/pages/about/">About</a>
+            </li>
+            
+            <li><a href="/feed.xml">RSS</a></li>
+        </nav>
+    </header>
+    <main>
+        
+<section>
+    <article class="post">
+    <header class="post-header">
+        <h1 class="">7 Languages: Clojure</h1>
+        <h2 class="">March 18, 2012</h2>
+    </header>
+    
+    <p>Oooooo.... <a href="http://en.wikipedia.org/wiki/Clojure">Clojure</a>. Along with Scala, this was one of my most anticipated languages (mainly because of the JVM integration). Clojure is a dialect of Lisp, which is a very old family of programming languages. Most of the syntax is just parentheses.</p><p>For the <a href="http://xkcd.com/297/">xkcd</a> fans:</p><p><img src="http://imgs.xkcd.com/comics/lisp_cycles.png" alt="xkcd" /></p><p>I've wanted to try a Lisp for a while and Clojure seems like the most practical one. Clojure is another functional language, though it's not considered "pure" since it does allow some side-effects. As I said above, the syntax pretty much just parantheses grounping function calls.</p><pre><code class="clojure">;; create a list of numbers
+(list 1 2 3 4 5)
+;; define a value
+(def stuff (list 1 2 3))
+;; prefix notation
+(+ 1 2)
+;; map function that doubles each element in the list
+(map #(* 2 %) stuff)
+</code></pre><p>Beyond trying to mentally parse all of those parens, the prefix notation can get a little confusing. Instead of saying <code>(1 + 2)</code> you have to say <code>(+ 1 2)</code>. In Io you passed a message to an object. In Clojure you pass arguments to a function. Even things like if statements have been turned into functions.</p><pre><code class="clojure">(if (= 3 (count stuff))
+  (println "If is a function!")
+  (println "That should have worked."))
+</code></pre><p>Another cool thing about Lisps in general is that everything is essentially a list. The code is data and the data is code. You can write macros that allow you to create new language constructs:</p><pre><code class="clojure">(defmacro unless
+  [test body else]
+  (list 'if (list 'not test) body else))
+</code></pre><p>Clojure also has a strong concurrency focus. While, as with most functional languages, you should try to stick with immutability, you can still use mutable state in a safe way. Clojure implements a thing they call Software Transactional Memory (STM), which is basically the equivalent of a database transaction for your application's objects in memory.</p><p>There's a lot of cool concurrency stuff in Clojure, but I don't understand it well enough to summarize it.</p><p>Clojure is really fascinating. It's a very different way of programming, but one that didn't crush my head into pulp like Prolog did. I'm looking forward to playing around with this language more in the future.</p><p>One final installment to come: Haskell.</p>
+    <footer>
+        
+        <div class="post-tags">
+            <strong>Tags:</strong>
+            
+            <a href="/tags/clojure/">clojure</a>
+            
+            <a href="/tags/programming%20languages/">programming languages</a>
+            
+            <a href="/tags/technical/">technical</a>
+            
+            <a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a>
+            
+        </div>
+        
+    </footer>
+</article>
+
+    <nav>
+        
+        <a href="/posts/2012-03-18-7-languages-erlang/">&laquo; 7 Languages: Erlang</a>
+        
+        
+        <a class="right" href="/posts/2012-03-13-7-languages-scala/">7 Languages: Scala &raquo;</a>
+        
+    </nav>
+
+    
+</section>
+
+    </main>
+    <footer id="main-footer">
+        <nav>
+            
+            <li><a href="/tags/erlang/">erlang</a></li>
+            
+            <li><a href="/tags/scala/">scala</a></li>
+            
+            <li><a href="/tags/clojure/">clojure</a></li>
+            
+            <li><a href="/tags/programming%20languages/">programming languages</a></li>
+            
+            <li><a href="/tags/political/">political</a></li>
+            
+            <li><a href="/tags/prolog/">prolog</a></li>
+            
+            <li><a href="/tags/technical/">technical</a></li>
+            
+            <li><a href="/tags/haskell/">haskell</a></li>
+            
+            <li><a href="/tags/io/">io</a></li>
+            
+            <li><a href="/tags/php/">php</a></li>
+            
+            <li><a href="/tags/gradle/">gradle</a></li>
+            
+            <li><a href="/tags/ruby/">ruby</a></li>
+            
+            <li><a href="/tags/netflix%20prize/">netflix prize</a></li>
+            
+            <li><a href="/tags/raspberry%20pi/">raspberry pi</a></li>
+            
+            <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
+            
+        </nav>
+        <p>Copyright &copy; 2020 Andrew Oberstar</p>
+        <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+    </footer>
+</body>
+
+</html>

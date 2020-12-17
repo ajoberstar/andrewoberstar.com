@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Andrew Oberstar: 7 Languages: Scala</title>
+
+    
+<meta name="keywords" content="erlang,scala,clojure,programming languages,political,prolog,technical,haskell,io,php,gradle,ruby,netflix prize,raspberry pi,7 Languages in 7 Weeks">
+
+<meta name="description" content="Just crossed the halfway point of 7 Languages in 7 Weeks with Scala. This is a hybrid object-oriented and functional language. It&#39;s a JVM based language, and provides interoperability with existing Java code. Like, Java it has strong static typing. Unlike Java, Scala can infer types in many cases, removing a lot of extra typing. For example in Java:">
+
+
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="alternate" type="application/atom+xml" title="Posts" href="/feed.xml">
+
+    <script src="/js/highlight.pack.js" type="application/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/solarized-dark.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header id="main-header">
+        <a id="brand" href="/">Andrew Oberstar</a>
+        <nav>
+            <li ><a href="/">Home</a></li>
+            <li ><a href="/archives/">Archives</a></li>
+            
+            <li >
+                <a href="/pages/about/">About</a>
+            </li>
+            
+            <li><a href="/feed.xml">RSS</a></li>
+        </nav>
+    </header>
+    <main>
+        
+<section>
+    <article class="post">
+    <header class="post-header">
+        <h1 class="">7 Languages: Scala</h1>
+        <h2 class="">March 13, 2012</h2>
+    </header>
+    
+    <p>Just crossed the halfway point of 7 Languages in 7 Weeks with <a href="http://en.wikipedia.org/wiki/Scala_(programming_language)">Scala</a>. This is a hybrid object-oriented and functional language. It's a JVM based language, and provides interoperability with existing Java code. Like, Java it has strong static typing. Unlike Java, Scala can infer types in many cases, removing a lot of extra typing. For example in Java:</p><pre><code class="java">List&lt;String&gt; list = new ArrayList&lt;String&gt;();
+</code></pre><p>And in Scala:</p><pre><code class="scala">val list = List("string1", "string2")
+</code></pre><p>Scala knows that since you created a list of two <code>String</code>s, that you probably want that variable to be a <code>List[String]</code> variable. That line is about two-thirsda as long as the equivalent in Java, not to mention that I already added two items to the list in Scala, as opposed to the empty Java list.</p><p>Scala also supports closures, has native support for XML, really cool pattern matching stuff, and some fancy concurrency stuff that I don't really grasp.</p><p>Native support for tuples which can give you essentially multiple return values:</p><pre><code class="scala">def getName() {
+  (first, last)
+}
+val (first, last) = getName()
+println(first)
+println(last)
+</code></pre><p>It also has an equivalent of multiple inheritance or mixins, that they call traits. A trait is essentially an abstract class, but you can mix multiple traits into a single class. (This is just an illustration of the idea, not sure if the syntax is completely right)</p><pre><code class="scala">trait Greeter {
+  def greet() = println("Hello!")
+}
+
+trait Helper {
+  def help() = println("Can I help you?")
+}
+
+class Person(name: String) with Greeter, Helper
+</code></pre><p>Scala seems very complex. It's type system is really cool, but hard to wrap your head around. Case in point, this example method signature:</p><pre><code class="scala">def map[B, That](f: A =&gt; B)(implicit bf: CanBuildFrom[Repr, B, That]): That
+</code></pre><p>I'd really like to get into Scala some more (just ordered <a href="http://www.amazon.com/Programming-Scala-Comprehensive-Step---Step/dp/0981531644/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1331695083&amp;sr=1-1">Programming in Scala</a>, so I can do just that). It seems like a nice next step past Java. Giving some more modern constructs and simplifying some of the mundane ceremony in Java.</p><p>Next up Erlang...</p>
+    <footer>
+        
+        <div class="post-tags">
+            <strong>Tags:</strong>
+            
+            <a href="/tags/scala/">scala</a>
+            
+            <a href="/tags/programming%20languages/">programming languages</a>
+            
+            <a href="/tags/technical/">technical</a>
+            
+            <a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a>
+            
+        </div>
+        
+    </footer>
+</article>
+
+    <nav>
+        
+        <a href="/posts/2012-03-18-7-languages-clojure/">&laquo; 7 Languages: Clojure</a>
+        
+        
+        <a class="right" href="/posts/2012-03-10-7-languages-prolog/">7 Languages: Prolog &raquo;</a>
+        
+    </nav>
+
+    
+</section>
+
+    </main>
+    <footer id="main-footer">
+        <nav>
+            
+            <li><a href="/tags/erlang/">erlang</a></li>
+            
+            <li><a href="/tags/scala/">scala</a></li>
+            
+            <li><a href="/tags/clojure/">clojure</a></li>
+            
+            <li><a href="/tags/programming%20languages/">programming languages</a></li>
+            
+            <li><a href="/tags/political/">political</a></li>
+            
+            <li><a href="/tags/prolog/">prolog</a></li>
+            
+            <li><a href="/tags/technical/">technical</a></li>
+            
+            <li><a href="/tags/haskell/">haskell</a></li>
+            
+            <li><a href="/tags/io/">io</a></li>
+            
+            <li><a href="/tags/php/">php</a></li>
+            
+            <li><a href="/tags/gradle/">gradle</a></li>
+            
+            <li><a href="/tags/ruby/">ruby</a></li>
+            
+            <li><a href="/tags/netflix%20prize/">netflix prize</a></li>
+            
+            <li><a href="/tags/raspberry%20pi/">raspberry pi</a></li>
+            
+            <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
+            
+        </nav>
+        <p>Copyright &copy; 2020 Andrew Oberstar</p>
+        <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+    </footer>
+</body>
+
+</html>

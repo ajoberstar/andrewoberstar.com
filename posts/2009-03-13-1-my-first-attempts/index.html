@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Andrew Oberstar: My First Attempts</title>
+
+    
+<meta name="keywords" content="erlang,scala,clojure,programming languages,political,prolog,technical,haskell,io,php,gradle,ruby,netflix prize,raspberry pi,7 Languages in 7 Weeks">
+
+<meta name="description" content="I&#39;ll preface this by saying I have no hopes, expectations, or anything else of actually competing in this prize. I came into this hoping to learn about recommender systems.So I started by finding some research papers on recommender systems and collaborative filtering. I read that and assumed I could start implementing a nearest neighbor algorithm. So I pulled out my trusty old Java and wrote a quick app to import the training set into a MySQL database. Once the import actually started to work, it took 10 hours to import. Once that happened some reality set in as to how massive this was compared to anything I&#39;d worked on before. Little did I know, I still hadn&#39;t learned.">
+
+
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="alternate" type="application/atom+xml" title="Posts" href="/feed.xml">
+
+    <script src="/js/highlight.pack.js" type="application/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/solarized-dark.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header id="main-header">
+        <a id="brand" href="/">Andrew Oberstar</a>
+        <nav>
+            <li ><a href="/">Home</a></li>
+            <li ><a href="/archives/">Archives</a></li>
+            
+            <li >
+                <a href="/pages/about/">About</a>
+            </li>
+            
+            <li><a href="/feed.xml">RSS</a></li>
+        </nav>
+    </header>
+    <main>
+        
+<section>
+    <article class="post">
+    <header class="post-header">
+        <h1 class="">My First Attempts</h1>
+        <h2 class="">March 13, 2009</h2>
+    </header>
+    
+    <p>I'll preface this by saying I have no hopes, expectations, or anything else of actually competing in this prize. I came into this hoping to learn about recommender systems.</p><p>So I started by finding some research papers on recommender systems and collaborative filtering. I read that and assumed I could start implementing a nearest neighbor algorithm. So I pulled out my trusty old Java and wrote a quick app to import the training set into a MySQL database. Once the import actually started to work, it took 10 hours to import. Once that happened some reality set in as to how massive this was compared to anything I'd worked on before. Little did I know, I still hadn't learned.</p><p>Then I started to implement my nearest neighbor algorithm. After working on that off and on for a week or so, I ran it. 5 hours later it was still calculating similarity scores for the first prediction. With another 1.5 million ratings to predict that it hadn't even started on, I realized this was pointless. So a trip to the Netflix forum and I realize that nobody in their right mind is running their algorithms from a database. After putzing around on my own for a while trying to figure it out. I found a Java framework which I proceeded to modify to my heart's content to get it all to run in memory.</p><p>Now that I felt like this could start working I modified my nearest neighbor algorithm to work with the memory backend, but yet again it was taking way too long. 8000 out of 1.5 million in 12 hours. Another trip to the forum and my mistaken assumption from the papers I had read that nearest neighbor was the best algorithm to start with was highly faulty. On to matrix factorization...</p>
+    <footer>
+        
+        <div class="post-tags">
+            <strong>Tags:</strong>
+            
+            <a href="/tags/technical/">technical</a>
+            
+            <a href="/tags/netflix%20prize/">netflix prize</a>
+            
+        </div>
+        
+    </footer>
+</article>
+
+    <nav>
+        
+        <a href="/posts/2009-03-17-dont-rush-your-math/">&laquo; Don&#39;t Rush Your Math</a>
+        
+        
+        <a class="right" href="/posts/2009-03-13-3-matrix-factorization/">Matrix Factorization &raquo;</a>
+        
+    </nav>
+
+    
+</section>
+
+    </main>
+    <footer id="main-footer">
+        <nav>
+            
+            <li><a href="/tags/erlang/">erlang</a></li>
+            
+            <li><a href="/tags/scala/">scala</a></li>
+            
+            <li><a href="/tags/clojure/">clojure</a></li>
+            
+            <li><a href="/tags/programming%20languages/">programming languages</a></li>
+            
+            <li><a href="/tags/political/">political</a></li>
+            
+            <li><a href="/tags/prolog/">prolog</a></li>
+            
+            <li><a href="/tags/technical/">technical</a></li>
+            
+            <li><a href="/tags/haskell/">haskell</a></li>
+            
+            <li><a href="/tags/io/">io</a></li>
+            
+            <li><a href="/tags/php/">php</a></li>
+            
+            <li><a href="/tags/gradle/">gradle</a></li>
+            
+            <li><a href="/tags/ruby/">ruby</a></li>
+            
+            <li><a href="/tags/netflix%20prize/">netflix prize</a></li>
+            
+            <li><a href="/tags/raspberry%20pi/">raspberry pi</a></li>
+            
+            <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
+            
+        </nav>
+        <p>Copyright &copy; 2020 Andrew Oberstar</p>
+        <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+    </footer>
+</body>
+
+</html>

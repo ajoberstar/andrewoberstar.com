@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("/fonts/CascadiaCode.woff2") format("woff2");
+}
+
+:root {
+  --background-color: blue;
+  --foreground-color: yellow;
+  --link-color: green;
+  --top-nav-background-color: orange;
+  --top-nav-shadow-color: red;
+  --nav-link-color: purple;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+code {
+  font-family: "Cascadia Code", "Courier New", monospace;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 3rem 1fr 3rem;
+  grid-gap: 1rem;
+  /* margin: 0; */
+  /* margin-bottom: 1rem; */
+}
+
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+#main-header nav, #main-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+}
+
+#main-header nav li, #main-footer nav li {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+#main-header nav li:first-of-type {
+  margin-left: 0;
+}
+
+#main-header nav li:last-of-type {
+  margin-right: 0;
+}
+
+main {
+  width: 100vw;
+  max-width: 900px;
+}
+
+#main-footer {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}

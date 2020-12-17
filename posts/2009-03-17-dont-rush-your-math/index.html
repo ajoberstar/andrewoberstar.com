@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Andrew Oberstar: Don&#39;t Rush Your Math</title>
+
+    
+<meta name="keywords" content="erlang,scala,clojure,programming languages,political,prolog,technical,haskell,io,php,gradle,ruby,netflix prize,raspberry pi,7 Languages in 7 Weeks">
+
+<meta name="description" content="I&#39;ve been trying to implement Gravity&#39;s BRISMF#250 model but have been getting much higher RMSEs. I had no idea what was wrong so I decided to move on and start implementing the code to retrain features after the initial training. To test I had to rerun my BRISMF#1 model which resulted in an RMSE 0.01 higher, which made no sense. I looked through my code for changes I&#39;ve made since I initially ran that and came across an error.Most algorithms will require different ranges of random values to fill the feature arrays. But, the way Java&#39;s random double generator is set up, it will only return a value between 0.0 and 1.0. Since that&#39;s not going to be helpful, I made a quick equation to modify the range. Unfortunately I rushed through what should have been a simple equation and came up with the following.">
+
+
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="alternate" type="application/atom+xml" title="Posts" href="/feed.xml">
+
+    <script src="/js/highlight.pack.js" type="application/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/solarized-dark.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header id="main-header">
+        <a id="brand" href="/">Andrew Oberstar</a>
+        <nav>
+            <li ><a href="/">Home</a></li>
+            <li ><a href="/archives/">Archives</a></li>
+            
+            <li >
+                <a href="/pages/about/">About</a>
+            </li>
+            
+            <li><a href="/feed.xml">RSS</a></li>
+        </nav>
+    </header>
+    <main>
+        
+<section>
+    <article class="post">
+    <header class="post-header">
+        <h1 class="">Don&#39;t Rush Your Math</h1>
+        <h2 class="">March 17, 2009</h2>
+    </header>
+    
+    <p>I've been trying to implement Gravity's BRISMF#250 model but have been getting much higher RMSEs. I had no idea what was wrong so I decided to move on and start implementing the code to retrain features after the initial training. To test I had to rerun my BRISMF#1 model which resulted in an RMSE 0.01 higher, which made no sense. I looked through my code for changes I've made since I initially ran that and came across an error.</p><p>Most algorithms will require different ranges of random values to fill the feature arrays. But, the way Java's random double generator is set up, it will only return a value between 0.0 and 1.0. Since that's not going to be helpful, I made a quick equation to modify the range. Unfortunately I rushed through what should have been a simple equation and came up with the following.</p><pre><code class="java">value = randomDouble * (max - min) - min;
+</code></pre><p>The problem with this is if you wanted a range between -0.01 and 0.01, you end up with one between 0.02 and 0.03. It should have been:</p><pre><code class="java">value = randomDouble * (max - min) + min;
+</code></pre><p>Now that I've fixed this I can try BRISMF#250 again. Lesson learned: don't rush your math (even really simple math).</p>
+    <footer>
+        
+        <div class="post-tags">
+            <strong>Tags:</strong>
+            
+            <a href="/tags/technical/">technical</a>
+            
+            <a href="/tags/netflix%20prize/">netflix prize</a>
+            
+        </div>
+        
+    </footer>
+</article>
+
+    <nav>
+        
+        <a href="/posts/2009-03-24-progress-without-perfection/">&laquo; Progress Without Perfection</a>
+        
+        
+        <a class="right" href="/posts/2009-03-13-1-my-first-attempts/">My First Attempts &raquo;</a>
+        
+    </nav>
+
+    
+</section>
+
+    </main>
+    <footer id="main-footer">
+        <nav>
+            
+            <li><a href="/tags/erlang/">erlang</a></li>
+            
+            <li><a href="/tags/scala/">scala</a></li>
+            
+            <li><a href="/tags/clojure/">clojure</a></li>
+            
+            <li><a href="/tags/programming%20languages/">programming languages</a></li>
+            
+            <li><a href="/tags/political/">political</a></li>
+            
+            <li><a href="/tags/prolog/">prolog</a></li>
+            
+            <li><a href="/tags/technical/">technical</a></li>
+            
+            <li><a href="/tags/haskell/">haskell</a></li>
+            
+            <li><a href="/tags/io/">io</a></li>
+            
+            <li><a href="/tags/php/">php</a></li>
+            
+            <li><a href="/tags/gradle/">gradle</a></li>
+            
+            <li><a href="/tags/ruby/">ruby</a></li>
+            
+            <li><a href="/tags/netflix%20prize/">netflix prize</a></li>
+            
+            <li><a href="/tags/raspberry%20pi/">raspberry pi</a></li>
+            
+            <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
+            
+        </nav>
+        <p>Copyright &copy; 2020 Andrew Oberstar</p>
+        <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+    </footer>
+</body>
+
+</html>

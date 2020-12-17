@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Andrew Oberstar: 7 Languages: Erlang</title>
+
+    
+<meta name="keywords" content="erlang,scala,clojure,programming languages,political,prolog,technical,haskell,io,php,gradle,ruby,netflix prize,raspberry pi,7 Languages in 7 Weeks">
+
+<meta name="description" content="Chapter 5 of 7 Languages in 7 Weeks is on Erlang. Erlang is a functional language with a strong focus on concurrency and reliability. Its syntax is based on Prolog (i.e. it&#39;s weird). The author described it as a language that &quot;makes easy things hard, and hard things easy&quot;.As a functional language it has a lot of functions geared towards collection operations (e.g. map, foreach, foldl). Nothing terrible weird about those. It does have this cool feature they call list comprehensions, that are a way for you to combine most of those operations into one line:">
+
+
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="alternate" type="application/atom+xml" title="Posts" href="/feed.xml">
+
+    <script src="/js/highlight.pack.js" type="application/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/solarized-dark.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header id="main-header">
+        <a id="brand" href="/">Andrew Oberstar</a>
+        <nav>
+            <li ><a href="/">Home</a></li>
+            <li ><a href="/archives/">Archives</a></li>
+            
+            <li >
+                <a href="/pages/about/">About</a>
+            </li>
+            
+            <li><a href="/feed.xml">RSS</a></li>
+        </nav>
+    </header>
+    <main>
+        
+<section>
+    <article class="post">
+    <header class="post-header">
+        <h1 class="">7 Languages: Erlang</h1>
+        <h2 class="">March 18, 2012</h2>
+    </header>
+    
+    <p>Chapter 5 of 7 Languages in 7 Weeks is on <a href="http://en.wikipedia.org/wiki/Erlang_(programming_language)">Erlang</a>. Erlang is a functional language with a strong focus on concurrency and reliability. Its syntax is based on Prolog (i.e. it's weird). The author described it as a language that "makes easy things hard, and hard things easy".</p><p>As a functional language it has a lot of functions geared towards collection operations (e.g. map, foreach, foldl). Nothing terrible weird about those. It does have this cool feature they call list comprehensions, that are a way for you to combine most of those operations into one line:</p><pre><code class="erlang">//rough syntax
+[map || iteration, filter, filter2, ...]
+
+//example
+[lists:foldl(fun(X, Product) -&gt; X * Product end, List) || List &lt;- Lists, length(List) &gt; 5]
+</code></pre><p>This will return a list that contains the product of all elements in each list with a length longer than 5.</p><p>But in general the syntax and general usage is the "making easy things hard" part of that quote. The "making hard things easy" part is related to concurrency and reliability.</p><p>Erlang also uses an actor based concurrency strategy, but rather than having them run in threads as they would in Scala, Erlang spawns lightweight processes. Those processes don't share any state, pushing developers even farther down the immutable-only and functional programming route.</p><p>The reliability portion of that is that there are some core libraries that help manage the processes and restart them if they fail. Rather than burden the code with all kinds of error handling logic, Erlang's mantra is "let it crash". If the process fails you have something monitoring for that and it is immediately restarted.</p><p>Erlang seems well suited to a lot of things. Most of them aren't things I'm interested in developing. I'm glad to have learned a little about their perspective, but I'm not too broken up about moving on to the next language: Clojure.</p>
+    <footer>
+        
+        <div class="post-tags">
+            <strong>Tags:</strong>
+            
+            <a href="/tags/erlang/">erlang</a>
+            
+            <a href="/tags/programming%20languages/">programming languages</a>
+            
+            <a href="/tags/technical/">technical</a>
+            
+            <a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a>
+            
+        </div>
+        
+    </footer>
+</article>
+
+    <nav>
+        
+        <a href="/posts/2012-03-19-7-languages-haskell/">&laquo; 7 Languages: Haskell</a>
+        
+        
+        <a class="right" href="/posts/2012-03-18-7-languages-clojure/">7 Languages: Clojure &raquo;</a>
+        
+    </nav>
+
+    
+</section>
+
+    </main>
+    <footer id="main-footer">
+        <nav>
+            
+            <li><a href="/tags/erlang/">erlang</a></li>
+            
+            <li><a href="/tags/scala/">scala</a></li>
+            
+            <li><a href="/tags/clojure/">clojure</a></li>
+            
+            <li><a href="/tags/programming%20languages/">programming languages</a></li>
+            
+            <li><a href="/tags/political/">political</a></li>
+            
+            <li><a href="/tags/prolog/">prolog</a></li>
+            
+            <li><a href="/tags/technical/">technical</a></li>
+            
+            <li><a href="/tags/haskell/">haskell</a></li>
+            
+            <li><a href="/tags/io/">io</a></li>
+            
+            <li><a href="/tags/php/">php</a></li>
+            
+            <li><a href="/tags/gradle/">gradle</a></li>
+            
+            <li><a href="/tags/ruby/">ruby</a></li>
+            
+            <li><a href="/tags/netflix%20prize/">netflix prize</a></li>
+            
+            <li><a href="/tags/raspberry%20pi/">raspberry pi</a></li>
+            
+            <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
+            
+        </nav>
+        <p>Copyright &copy; 2020 Andrew Oberstar</p>
+        <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+    </footer>
+</body>
+
+</html>

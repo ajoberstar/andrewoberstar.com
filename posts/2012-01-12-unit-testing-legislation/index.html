@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Andrew Oberstar: Unit Testing Legislation</title>
+
+    
+<meta name="keywords" content="erlang,scala,clojure,programming languages,political,prolog,technical,haskell,io,php,gradle,ruby,netflix prize,raspberry pi,7 Languages in 7 Weeks">
+
+<meta name="description" content="Just think how cool it would be if you could run unit tests on legislation...I was just reading through the Wikipedia page on SOPA (the Stop Online Piracy Act), with people going back and forth about whether the bill&#39;s language does or does not permit certain activity. I&#39;m misusing the term unit testing, but the idea of running automated tests against legislation to verify that it fulfills it&#39;s intended purpose is very appealing. It&#39;s inherently difficult (more likely impossible) given the way that law works (not that I understand it), but just go with me for a minute. Imagine if you could write (and run) something like this (yay for Spock against SOPA:">
+
+
+
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="alternate" type="application/atom+xml" title="Posts" href="/feed.xml">
+
+    <script src="/js/highlight.pack.js" type="application/javascript"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="/css/solarized-dark.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header id="main-header">
+        <a id="brand" href="/">Andrew Oberstar</a>
+        <nav>
+            <li ><a href="/">Home</a></li>
+            <li ><a href="/archives/">Archives</a></li>
+            
+            <li >
+                <a href="/pages/about/">About</a>
+            </li>
+            
+            <li><a href="/feed.xml">RSS</a></li>
+        </nav>
+    </header>
+    <main>
+        
+<section>
+    <article class="post">
+    <header class="post-header">
+        <h1 class="">Unit Testing Legislation</h1>
+        <h2 class="">January 12, 2012</h2>
+    </header>
+    
+    <p>Just think how cool it would be if you could run unit tests on legislation...</p><p>I was just reading through the <a href="http://en.wikipedia.org/wiki/Stop_Online_Piracy_Act">Wikipedia page</a> on <a href="http://thomas.loc.gov/cgi-bin/bdquery/z?d112:h.r.3261:">SOPA</a> (the Stop Online Piracy Act), with people going back and forth about whether the bill's language does or does not permit certain activity. I'm misusing the term unit testing, but the idea of running automated tests against legislation to verify that it fulfills it's intended purpose is very appealing. It's inherently difficult (more likely impossible) given the way that law works (not that I understand it), but just go with me for a minute. Imagine if you could write (and run) something like this (yay for <a href="http://spockframework.org/">Spock</a> against SOPA:</p><pre><code class="groovy">class SopaTest extends Specification {
+    Sopa sopa = new Sopa()
+
+    def 'sopa stops foreign sites dedicated to piracy'() {
+        given:
+        Site site = new PiracyRUs()
+        Person ownerOfSite = new Pirate()
+        ownerOfSite.uploadTo(site).file(entireMovie)
+        expect:
+        sopa.isSiteInViolation(site)
+    }
+
+    def 'sopa does not shutdown youtube'() {
+        given:
+        Site site = new Youtube()
+        Person userA = new OrdinaryPerson()
+        userA.uploadTo(site).file(fairUseClip)
+        expect:
+        !sopa.isSiteInViolation(site)
+    }
+}
+</code></pre><p>Run that and find out if SOPA really does violate our First Amendment rights or not. Just think how easy life could be then.</p>
+    <footer>
+        
+        <div class="post-tags">
+            <strong>Tags:</strong>
+            
+            <a href="/tags/political/">political</a>
+            
+        </div>
+        
+    </footer>
+</article>
+
+    <nav>
+        
+        <a href="/posts/2012-01-12-civility/">&laquo; Civility</a>
+        
+        
+        <a class="right" href="/posts/2011-11-04-abolish-daylight-savings-time/">Abolish Daylight Savings Time &raquo;</a>
+        
+    </nav>
+
+    
+</section>
+
+    </main>
+    <footer id="main-footer">
+        <nav>
+            
+            <li><a href="/tags/erlang/">erlang</a></li>
+            
+            <li><a href="/tags/scala/">scala</a></li>
+            
+            <li><a href="/tags/clojure/">clojure</a></li>
+            
+            <li><a href="/tags/programming%20languages/">programming languages</a></li>
+            
+            <li><a href="/tags/political/">political</a></li>
+            
+            <li><a href="/tags/prolog/">prolog</a></li>
+            
+            <li><a href="/tags/technical/">technical</a></li>
+            
+            <li><a href="/tags/haskell/">haskell</a></li>
+            
+            <li><a href="/tags/io/">io</a></li>
+            
+            <li><a href="/tags/php/">php</a></li>
+            
+            <li><a href="/tags/gradle/">gradle</a></li>
+            
+            <li><a href="/tags/ruby/">ruby</a></li>
+            
+            <li><a href="/tags/netflix%20prize/">netflix prize</a></li>
+            
+            <li><a href="/tags/raspberry%20pi/">raspberry pi</a></li>
+            
+            <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
+            
+        </nav>
+        <p>Copyright &copy; 2020 Andrew Oberstar</p>
+        <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
+    </footer>
+</body>
+
+</html>
