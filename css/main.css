@@ -58,6 +58,33 @@ header > h2 {
   font-size: 1rem;
 }
 
+h1 {
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 1rem;
+  font-style: italic;
+}
+
 article > section > header > h1 {
   font-weight: 400;
   font-size: 1.25rem;
