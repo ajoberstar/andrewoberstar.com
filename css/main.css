@@ -6,19 +6,31 @@
 }
 
 :root {
---dark-jungle-green: #1f2421ff;
---skobeloff: #216869ff;
---shiny-shamrock: #49a078ff;
---eton-blue: #9cc5a1ff;
---gainsboro: #dce1deff;
+  /* theme colors */
+  --blue-crayola: #2176ffff;
+  --platinum: #e8e9ebff;
+  --alabaster: #e0dfd5ff;
+  --onyx: #313638ff;
+  --tuscan-red: #885053ff;
 
-  --header-fg-color: #1F2421;
-  --header-bg-color: #216869;
-  --main-bg-color: #9BC1BC;
-  --article-bg-color: #DCE1DE;
-  --footer-bg-color: #9CC5A1;
-  --fg-color: #F4F1BB;
-  --link-color: #49A078;
+
+  --main-header-bg-color: var(--onyx);
+  --main-header-fg-color: var(--platinum);
+  --main-header-link-color: var(--platinum);
+
+  --main-bg-color: var(--alabaster);
+  --main-link-color: var(--blue-crayola);
+
+  --article-bg-color: white;
+  --article-fg-color: black;
+  --article-header-fg-color: var(--onyx);
+  --article-subheader-fg-color: var(--tuscan-red);
+
+
+  --main-footer-bg-color: var(--onyx);
+  --main-footer-fg-color: var(--platinum);
+  --main-footer-link-color: var(--blue-crayola);
+
   --shadow-color: rgba(34, 34, 34, 0.1);
 }
 
@@ -200,31 +212,45 @@ main > nav {
 /******************************************************************************/
 body {
   background-color: var(--main-bg-color);
-  color: black;
 }
 
 #main-header {
-  background-color: var(--header-bg-color);
+  background-color: var(--main-header-bg-color);
+  color: var(--main-header-fg-color);
   box-shadow: 0 1px 6px var(--shadow-color);
+}
+
+#main-header a, #main-header a:visited, #main-header a:hover {
+  color: var(--main-header-link-color);
+  text-decoration: none;
 }
 
 article, main > nav, #side {
   background-color: var(--article-bg-color);
+  color: var(--article-fg-color);
   box-shadow: 3px 3px 6px var(--shadow-color);
 }
 
-#main-footer {
-  background-color: var(--footer-bg-color);
-  color: var(--header-bg-color);
-  box-shadow: 0 -1px 6px var(--shadow-color);
+header > h1 {
+  color: var(--article-header-fg-color);
 }
 
-#main-header a, #main-header a:visited, #main-header a:hover {
-  color: var(--article-bg-color);
-  text-decoration: none;
+header > h2 {
+  color: var(--article-subheader-fg-color);
 }
 
 a, a:visited, a:hover {
-  color: var(--link-color);
+  color: var(--main-link-color);
+  text-decoration: none;
+}
+
+#main-footer {
+  background-color: var(--main-footer-bg-color);
+  color: var(--main-footer-fg-color);
+  box-shadow: 0 -1px 6px var(--shadow-color);
+}
+
+#main-footer a, #main-footer a:visited, #main-footer a:hover {
+  color: var(--main-footer-link-color);
   text-decoration: none;
 }
