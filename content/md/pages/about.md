@@ -3,6 +3,8 @@
  :page-index 0
  :navbar? true}
 
-## Write something about something
+## Where can you find me?
 
-wow wow wow
+- GitHub as [@ajoberstar](https://github.com/ajoberstar)
+- LinkedIn as [Andrew Oberstar](https://www.linkedin.com/in/andrewoberstar/)
+- Twitter as [@ajoberstar](https://twitter.com/ajoberstar)
