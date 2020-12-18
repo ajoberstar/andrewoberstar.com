@@ -15,11 +15,8 @@
     <link rel="shortcut icon" href="images/favicon.png">
     <link rel="alternate" type="application/atom+xml" title="Posts" href="/feed.xml">
 
-    {% script "js/highlight.pack.js" %}
-    <script>hljs.initHighlightingOnLoad();</script>
-
     {% style "css/main.css" %}
-    {% style "css/solarized-dark.css" %}
+    {% style "css/atom-one-dark.css" %}
 </head>
 
 <body>
@@ -55,6 +52,9 @@
         <p>Copyright &copy; {{today|date:yyyy}} {{author}}</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>
+
+    {% script "js/highlight.pack.js" %}
+    <script>hljs.initHighlightingOnLoad();</script>
 </body>
 
 </html>

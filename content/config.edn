@@ -11,7 +11,7 @@
  :post-date-format             "yyyy-MM-dd"
  :sass-src                     []
  :theme                        "andy"
- :resources                    ["img" "CNAME"]
+ :resources                    ["fonts" "img" "CNAME"]
  :disqus?                      false
  :disqus-shortname             ""
  :previews?                    true

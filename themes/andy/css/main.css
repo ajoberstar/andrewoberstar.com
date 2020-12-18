@@ -109,6 +109,10 @@ header {
   margin-bottom: 0.5rem;
 }
 
+.hljs {
+  border-radius: 3px;
+}
+
 main > nav {
   display: flex;
   flex-wrap: wrap;
