@@ -1,7 +1,7 @@
 {% extends "/html/base.html" %}
 {%block subtitle %}: Posts Tagged &quot;{{name}}&quot;{% endblock %}
 {% block content %}
-<section class="">
+<article>
     <header>
         <h1>Posts Tagged &quot;{{name}}&quot;</h1>
     </header>
@@ -13,5 +13,5 @@
         </li>
         {% endfor %}
     </ul>
-</section>
+</article>
 {% endblock %}

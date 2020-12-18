@@ -6,12 +6,20 @@
 }
 
 :root {
-  --background-color: blue;
-  --foreground-color: yellow;
-  --link-color: green;
-  --top-nav-background-color: orange;
-  --top-nav-shadow-color: red;
-  --nav-link-color: purple;
+--dark-jungle-green: #1f2421ff;
+--skobeloff: #216869ff;
+--shiny-shamrock: #49a078ff;
+--eton-blue: #9cc5a1ff;
+--gainsboro: #dce1deff;
+
+  --header-fg-color: #1F2421;
+  --header-bg-color: #216869;
+  --main-bg-color: #9BC1BC;
+  --article-bg-color: #DCE1DE;
+  --footer-bg-color: #9CC5A1;
+  --fg-color: #F4F1BB;
+  --link-color: #49A078;
+  --shadow-color: rgba(34, 34, 34, 0.1);
 }
 
 body {
@@ -22,11 +30,15 @@ code {
   font-family: "Cascadia Code", "Courier New", monospace;
 }
 
+/******************************************************************************/
+/* Layout                                                                     */
+/******************************************************************************/
 body {
   display: grid;
-  grid-template-rows: 3rem 1fr 3rem;
+  grid-template-columns: 1rem repeat(10, minmax(0, 1fr)) 1rem;
+  /* grid-template-rows: 3rem 1fr 3rem; */
   grid-gap: 1rem;
-  /* margin: 0; */
+  margin: 0;
   /* margin-bottom: 1rem; */
 }
 
@@ -35,6 +47,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 #main-header nav, #main-footer nav {
@@ -59,12 +72,136 @@ body {
 }
 
 main {
-  width: 100vw;
-  max-width: 900px;
+  display: grid;
+  grid-template-rows: fit-content(1fr);
+  grid-gap: 1rem;
+}
+
+article, main > nav, #side {
+  border-radius: 3px;
+  padding: 1rem;
+}
+
+header > h1, header > h2 {
+  margin: 0;
+}
+
+header {
+  margin-bottom: 0.5rem;
+}
+
+main > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #main-footer {
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 1rem;
+  width: 100%;
   text-align: center;
+}
+
+/******************************************************************************/
+/* Media                                                                      */
+/******************************************************************************/
+@media screen and (max-width: 767px) {
+  #main-header {
+    grid-column: 1 / span 12;
+    grid-row: 1;
+  }
+
+  main {
+    grid-column: 2 / span 11;
+    grid-row: 2;
+  }
+
+  #side {
+    grid-column: 2 / span 11;
+    grid-row: 3;
+  }
+
+  #side > nav {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+  }
+
+  #side > nav > li {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  #main-footer {
+    grid-column: 1 / span 12;
+    grid-row: 4;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #main-header {
+    grid-column: 1 / span 12;
+    grid-row: 1;
+  }
+
+  main {
+    grid-column: 2 / span 8;
+    grid-row: 2;
+  }
+
+  #side {
+    grid-column: 10 / span 2;
+    grid-row: 2;
+  }
+
+  #side > nav {
+    list-style-type: none;
+  }
+
+  #main-footer {
+    grid-column: 1 / span 12;
+    grid-row: 3;
+  }
+}
+
+/******************************************************************************/
+/* Colors                                                                     */
+/******************************************************************************/
+body {
+  background-color: var(--main-bg-color);
+  color: black;
+}
+
+#main-header {
+  background-color: var(--header-bg-color);
+  box-shadow: 0 1px 6px var(--shadow-color);
+}
+
+main {
+  /* background-color: green; */
+}
+
+article, main > nav, #side {
+  background-color: var(--article-bg-color);
+  box-shadow: 3px 3px 6px var(--shadow-color);
+}
+
+#main-footer {
+  background-color: var(--footer-bg-color);
+  color: var(--header-bg-color);
+  box-shadow: 0 -1px 6px var(--shadow-color);
+}
+
+#main-header a, #main-header a:visited, #main-header a:hover {
+  color: var(--article-bg-color);
+  text-decoration: none;
+}
+
+
+a, a:visited, a:hover {
+  color: var(--link-color);
+  text-decoration: none;
 }

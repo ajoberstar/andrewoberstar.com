@@ -1,8 +1,8 @@
 {% extends "/html/base.html" %}
 {% block content %}
 {% for post in posts %}
-<article class="post">
-    <header class="post-header">
+<article>
+    <header>
         <h1 class="">{{post.title}}</h1>
         <h2 class="">{{post.date|date:longDate}}</h2>
     </header>

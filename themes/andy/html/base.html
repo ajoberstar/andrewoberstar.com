@@ -40,12 +40,18 @@
         {% block content %}
         {% endblock %}
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             {% for tag in tags %}
             <li><a href="{{tag.uri}}">{{tag.name}}</a></li>
             {% endfor %}
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; {{today|date:yyyy}} {{author}}</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>
