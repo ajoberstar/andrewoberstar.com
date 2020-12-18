@@ -18,7 +18,7 @@
     {% if page.toc %}{{page.toc|safe}}{% endif %}
     {{page.content|safe}}
 </article>
-<footer>
+<nav>
     {% if page.prev %}
     <a href="{{page.prev.uri}}">&laquo; {{page.prev.title}}</a>
     {% else %}
@@ -27,5 +27,5 @@
     {% if page.next %}
     <a href="{{page.next.uri}}">{{page.next.title}} &raquo;</a>
     {% endif %}
-</footer>
+</nav>
 {% endblock %}
