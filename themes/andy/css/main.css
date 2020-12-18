@@ -6,38 +6,30 @@
 }
 
 :root {
-/* possible */
---queen-blue: #33658aff;
---dark-sky-blue: #86bbd8ff;
---charcoal: #2f4858ff;
---honey-yellow: #f6ae2dff;
---safety-orange-blaze-orange: #f26419ff;
+  /* theme colors */
+  --blue-crayola: #2176ffff;
+  --platinum: #e8e9ebff;
+  --alabaster: #e0dfd5ff;
+  --onyx: #313638ff;
+  --tuscan-red: #885053ff;
 
 
-/* current */
---dark-jungle-green: #1f2421ff;
---skobeloff: #216869ff;
---shiny-shamrock: #49a078ff;
---eton-blue: #9cc5a1ff;
---gainsboro: #dce1deff;
+  --main-header-bg-color: var(--onyx);
+  --main-header-fg-color: var(--platinum);
+  --main-header-link-color: var(--platinum);
 
-
-
-  --main-header-bg-color: var(--charcoal);
-  --main-header-fg-color: var(--safety-orange-blaze-orange);
-  --main-header-link-color: var(--honey-yellow);
-
-  --main-bg-color: var(--queen-blue);
-  --main-link-color: var(--safety-orange-blaze-orange);
+  --main-bg-color: var(--alabaster);
+  --main-link-color: var(--blue-crayola);
 
   --article-bg-color: white;
   --article-fg-color: black;
-  --article-header-fg-color: var(--charcoal);
+  --article-header-fg-color: var(--onyx);
+  --article-subheader-fg-color: var(--tuscan-red);
 
 
-  --main-footer-bg-color: var(--charcoal);
-  --main-footer-fg-color: var(--safety-orange-blaze-orange);
-  --main-footer-link-color: var(--honey-yellow);
+  --main-footer-bg-color: var(--onyx);
+  --main-footer-fg-color: var(--platinum);
+  --main-footer-link-color: var(--blue-crayola);
 
   --shadow-color: rgba(34, 34, 34, 0.1);
 }
@@ -241,6 +233,10 @@ article, main > nav, #side {
 
 header > h1 {
   color: var(--article-header-fg-color);
+}
+
+header > h2 {
+  color: var(--article-subheader-fg-color);
 }
 
 a, a:visited, a:hover {
