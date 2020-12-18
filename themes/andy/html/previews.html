@@ -10,6 +10,7 @@
     <a href="{{post.uri}}">Continue Reading</a>
 </article>
 {% endfor %}
+{% if any prev-uri next-uri %}
 <nav>
     {% if prev-uri %}
     <a class="left" href="{{prev-uri}}">&laquo; Prev</a>
@@ -18,4 +19,5 @@
     <a class="left" href="{{next-uri}}">Next &raquo;</a>
     {% endif %}
 </nav>
+{% endif %}
 {% endblock %}

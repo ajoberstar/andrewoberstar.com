@@ -6,7 +6,7 @@
     <a href="{{post.uri}}#disqus_thread">View Comments</a>
 </section>
 {% endif %}
-
+{% if any post.prev post.next %}
 <nav>
     {% if post.prev %}
     <a href="{{post.prev.uri}}">&laquo; {{post.prev.title}}</a>
@@ -15,4 +15,5 @@
     <a class="right" href="{{post.next.uri}}">{{post.next.title}} &raquo;</a>
     {% endif %}
 </nav>
+{% endif %}
 {% endblock %}
