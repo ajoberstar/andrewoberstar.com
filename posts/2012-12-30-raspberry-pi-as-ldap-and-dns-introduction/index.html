@@ -40,17 +40,16 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">Raspberry Pi as LDAP and DNS - Introduction</h1>
-        <h2 class="">December 30, 2012</h2>
+<article>
+    <header>
+        <h1>Raspberry Pi as LDAP and DNS - Introduction</h1>
+        <h2>December 30, 2012</h2>
     </header>
     
     <p>For those of you unfamiliar, <a href="http://www.raspberrypi.org/">Raspberry Pi</a> is an inexpensive computer that can run Linux and is about the size of a credit card. I think it was primarily designed for educational purposes -- to get kids into computers -- though it works well for a lot of other use cases. When I got mine, I started off with <a href="http://www.raspbmc.com/">Raspbmc</a>, the XBMC install for the Pi. I had a few issues and decided to stick with my existing Boxee Box for now.</p><p>My next project is going to be setting it up as an LDAP server to provide single sign on for my other Linux boxes and maybe trying to connect my Windows boxes to it as well. I'm also thinking about setting up DNS to have intranet domains (e.g. thinking of a .home TLD). I don't know much about configuring either of those or what the implications will be, so this will be a learning process.</p><p>I'm starting off by reimaging the Pi with <a href="http://www.raspbian.org/">Raspbian</a> using the image provided by the <a href="http://www.raspberrypi.org/downloads">Pi Foundation</a> and these <a href="http://elinux.org/RPi_Easy_SD_Card_Setup#Copying_an_image_to_the_SD_card_in_Linux_.28command_line.29">Linux CLI instructions</a>.</p><p>The first part is <a href="http://www.andrewoberstar.com/blog/2012/12/30/raspberry-pi-as-server-dns-and-dhcp">DNS and DHCP config</a>.</p>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/technical/">technical</a>
@@ -62,20 +61,22 @@
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2012-12-30-raspberry-pi-as-server-dns-and-dhcp/">&laquo; Raspberry Pi as Server - DNS and DHCP</a>
-        
-        
-        <a class="right" href="/posts/2012-12-20-gradle-sliced-bread/">Gradle &gt; Sliced Bread &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2012-12-30-raspberry-pi-as-server-dns-and-dhcp/">&laquo; Raspberry Pi as Server - DNS and DHCP</a>
+    
+    
+    <a class="right" href="/posts/2012-12-20-gradle-sliced-bread/">Gradle &gt; Sliced Bread &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -109,6 +110,9 @@
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>

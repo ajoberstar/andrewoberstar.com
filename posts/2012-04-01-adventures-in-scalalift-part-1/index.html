@@ -40,11 +40,10 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">Adventurs in Scala/Lift Part 1</h1>
-        <h2 class="">April 1, 2012</h2>
+<article>
+    <header>
+        <h1>Adventurs in Scala/Lift Part 1</h1>
+        <h2>April 1, 2012</h2>
     </header>
     
     <p>After completing 7 Languages in 7 Weeks, I decided to start working on a project to get my feet wet in Scala. For the past couple weeks I've been reading through <a href="http://www.amazon.com/Programming-Scala-Comprehensive-Step-step/dp/0981531601">Programming in Scala</a>, which is seemingly the definitive Scala book and is written by the language author.</p><p>I've really enjoyed a lot of Scala features so far:</p><ul><li><p>Type inference - One of the advantages to dynamic languages is that you don't have to specify types. Usually it's so obvious what type the value should be that it's just a waste of keystrokes to specify the type yourself. Scala gives you the same benefit but with static types, so everything is still enforced by the compiler.</p><p>In Java:</p><pre><code class="java">Map map = new HashMap(); //verbose...
@@ -129,7 +128,7 @@ import _root._.java.net.URL
 </code></pre><p>The concepts behind these imports aren't confusing and the syntax is straightforward. My problem is that in Java wildcard imports (<code>import java.util.*</code>) are considered evil because you aren't completely sure which types you are using from which packages. It makes it a lot harder for someone new to your code to come in and understand what each of the types you use correspond to.</p><p>General practice in Scala is to use the wildcard and relative imports. Obviously you need to be careful with this because importing everything willy-nilly is just going to cause issues. There are benefits to this for importing type aliases, case classes, and implicit functions, but it's a big change.</p></li><li><p>IDE support - I'm an Eclipse guy. While Scala does have an Eclipse plugin, it's a little lacking. I understand that it's a newer language and it's going to take a while for it to catch up but there are some annoyances:</p><ul><li>Compiler errors don't display if you hover of the snippet underlined in red. You need to go to the side of screen and hover over the red X. Time drains away, seconds at a time.</li><li>Compiler errors are sometimes wrong or missing. Some compiler errors won't go away but work just fine when I compile with <code>scalac</code>. There are also things that don't fail in Eclipse that do in <code>scalac</code>. However, all in all, something is better than nothing, and considering how slow Scala compilation is, something is a good start.</li><li>Side note: One huge benefit of the IDE is that hovering over a method/variable/expression will tell you what it's qualified type is. That's a huge benefit with relative imports.</li></ul></li></ul><p>Well, that's enough for one sitting. I just started playing with Lift a couple days ago, so next post will probably about that.</p><p>As a final note: Get Up With It by Miles Davis. The End.</p>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/scala/">scala</a>
@@ -143,20 +142,22 @@ import _root._.java.net.URL
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2012-09-14-if-this-then-that/">&laquo; If This Then That</a>
-        
-        
-        <a class="right" href="/posts/2012-03-20-65-languages-in-12-days/">6.5 Languages in 12 Days &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2012-09-14-if-this-then-that/">&laquo; If This Then That</a>
+    
+    
+    <a class="right" href="/posts/2012-03-20-65-languages-in-12-days/">6.5 Languages in 12 Days &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -190,6 +191,9 @@ import _root._.java.net.URL
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>

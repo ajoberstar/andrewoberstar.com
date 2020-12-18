@@ -40,17 +40,16 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">Gradle &gt; Sliced Bread</h1>
-        <h2 class="">December 20, 2012</h2>
+<article>
+    <header>
+        <h1>Gradle &gt; Sliced Bread</h1>
+        <h2>December 20, 2012</h2>
     </header>
     
     <p>I'm not really convinced that sliced bread is that much of an improvement over uncut bread, but Gradle is definitely better. Considering how much I've been using <a href="http://gradle.org">Gradle</a> over the last 2 years, I'm surprised I haven't written anything about it yet.</p><p>Let's start with the basics. Gradle is a build automation tool, primarily supporting JVM languages (e.g. Java, Groovy, Scala). You may be familiar with Ant and Maven, the two previous behemoths in the Java build space, but for those who don't know:</p><ul><li><a href="http://ant.apache.org/">Ant</a> is an XML based tool. You write a build file listing out all of the tasks you want to run. Once you have a build file set up, it's pretty good. Unfortunately, you need to define every action it will take and wire all of the inputs and outputs together. Also, if you realize that all of your JAR build scripts look the same, you're not going to have a very easy time trying to reuse that logic.</li><li><a href="http://maven.apache.org/">Maven</a> took the opposite philosophy of Ant. Rather than being a toolkit that you could do with what you please, Maven is based on the idea that everything is essentially built the same. Your XML file, is no longer a true build script, defining your actions, but instead a descriptor explaining what your project is. Maven is entirely declarative and all projects are supposed to use the same convention. All great, until you need to stray from that convention or want one little bit of extra functionality.</li></ul><p>Gradle comes in with the benefit of seeing the success and failures of both Ant and Maven ending up with a philosophy of starting declarative, but giving you the option to easily throw in extra logic as needed.</p><p>I'm not going to bother with simple examples, since you can easily find beginner tutorials on Gradle's website and elsewhere. This post can at least serve as a high-level introduction to why you might want to look at Gradle and, hopefully, I will be posting some more on this topic in the future.</p>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/technical/">technical</a>
@@ -62,20 +61,22 @@
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2012-12-30-raspberry-pi-as-ldap-and-dns-introduction/">&laquo; Raspberry Pi as LDAP and DNS - Introduction</a>
-        
-        
-        <a class="right" href="/posts/2012-12-02-letter-to-representatives-fiscal-cliff/">Letter to Representatives - Fiscal Cliff &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2012-12-30-raspberry-pi-as-ldap-and-dns-introduction/">&laquo; Raspberry Pi as LDAP and DNS - Introduction</a>
+    
+    
+    <a class="right" href="/posts/2012-12-02-letter-to-representatives-fiscal-cliff/">Letter to Representatives - Fiscal Cliff &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -109,6 +110,9 @@
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>

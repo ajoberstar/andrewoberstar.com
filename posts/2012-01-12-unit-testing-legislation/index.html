@@ -40,11 +40,10 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">Unit Testing Legislation</h1>
-        <h2 class="">January 12, 2012</h2>
+<article>
+    <header>
+        <h1>Unit Testing Legislation</h1>
+        <h2>January 12, 2012</h2>
     </header>
     
     <p>Just think how cool it would be if you could run unit tests on legislation...</p><p>I was just reading through the <a href="http://en.wikipedia.org/wiki/Stop_Online_Piracy_Act">Wikipedia page</a> on <a href="http://thomas.loc.gov/cgi-bin/bdquery/z?d112:h.r.3261:">SOPA</a> (the Stop Online Piracy Act), with people going back and forth about whether the bill's language does or does not permit certain activity. I'm misusing the term unit testing, but the idea of running automated tests against legislation to verify that it fulfills it's intended purpose is very appealing. It's inherently difficult (more likely impossible) given the way that law works (not that I understand it), but just go with me for a minute. Imagine if you could write (and run) something like this (yay for <a href="http://spockframework.org/">Spock</a> against SOPA:</p><pre><code class="groovy">class SopaTest extends Specification {
@@ -71,7 +70,7 @@
 </code></pre><p>Run that and find out if SOPA really does violate our First Amendment rights or not. Just think how easy life could be then.</p>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/political/">political</a>
@@ -81,20 +80,22 @@
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2012-01-12-civility/">&laquo; Civility</a>
-        
-        
-        <a class="right" href="/posts/2011-11-04-abolish-daylight-savings-time/">Abolish Daylight Savings Time &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2012-01-12-civility/">&laquo; Civility</a>
+    
+    
+    <a class="right" href="/posts/2011-11-04-abolish-daylight-savings-time/">Abolish Daylight Savings Time &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -128,6 +129,9 @@
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>

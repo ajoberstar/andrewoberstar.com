@@ -40,17 +40,16 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">Things I&#39;ve Learned About Java</h1>
-        <h2 class="">March 13, 2009</h2>
+<article>
+    <header>
+        <h1>Things I&#39;ve Learned About Java</h1>
+        <h2>March 13, 2009</h2>
     </header>
     
     <p>Doing a project with this scale of data (100 million ratings, by 480189 users, on 17770 movies) shows a person just how much they don't know about programming yet.</p><p>Here's a few things I've learned so far:</p><ol><li><p><strong>Objects take up a crap ton of memory.</strong></p><p>You don't realize this when you're just making you're little Person objects in class, but when you try and fit 100 million ratings in memory, objects are not your friend. It's all about arrays of primitive types.</p></li><li><p><strong>Integers take up way too much space.</strong></p><p>Even the relatively small, programmer abused <code>int</code> type will make you cry when you try to do this. Had to use <code>short</code> for movie ids and <code>byte</code> for ratings.</p></li><li><p><strong>Doubles are stupid.</strong></p><p>I never knew this but double math in Java is really imprecise. I don't have much choice (both speed and memory wise) but to use them, but adding simple decimals comes out really goofy. Google "java double arithmetic" and see the madness.</p></li><li><p>Java does not pass by reference.</p><p>It passes references by value. (I had heard this before but never ran into a problem with it until now) You may say, "What the heck does that mean?"  Well, for example take a <code>Dog</code> object called <code>fido</code> and pass it to a method that takes a <code>Dog</code> parameter. Let's say it's called <code>goofy</code> in the method. Right now <code>fido</code> and <code>goofy</code> point to the same thing. If you change something in the <code>goofy</code> object it will change the same thing in the <code>fido</code> object, because they're the same object. But if you say <code>goofy = new Dog();</code>  or <code>goofy = null</code> they no longer point to the same thing. <code>fido</code> still points where it did but now <code>goofy</code> points to something else.</p><p>That doesn't seem like too much of a problem, but... I had an array of 48,000 <code>PrintWriter</code> objects as I was trying to reorganize the data. At the end of each run I used  a for each (<code>for (PrintWriter print : outputArray)</code>) to set them all to null, so they could be reused in the next run. But since each element in that array was set into a newly declared <code>print</code> variable, setting <code>print = null</code> didn't set <code>outputArray[i] = null</code>. So a wasted hour or two of running the sorting program.</p></li></ol><p>That's all I have for now, but I'm sure I'll be posting about this again.</p>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/technical/">technical</a>
@@ -62,20 +61,22 @@
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2009-03-13-3-matrix-factorization/">&laquo; Matrix Factorization</a>
-        
-        
-        <a class="right" href="/posts/2009-03-13-4-success-relatively/">Success (Relatively) &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2009-03-13-3-matrix-factorization/">&laquo; Matrix Factorization</a>
+    
+    
+    <a class="right" href="/posts/2009-03-13-4-success-relatively/">Success (Relatively) &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -109,6 +110,9 @@
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>

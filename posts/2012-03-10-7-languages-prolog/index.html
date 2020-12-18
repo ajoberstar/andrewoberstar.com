@@ -40,11 +40,10 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">7 Languages: Prolog</h1>
-        <h2 class="">March 10, 2012</h2>
+<article>
+    <header>
+        <h1>7 Languages: Prolog</h1>
+        <h2>March 10, 2012</h2>
     </header>
     
     <p>Next up in 7 Languages in 7 Weeks was <a href="http://en.wikipedia.org/wiki/Prolog">Prolog</a>. This is a logic programming language. Your "code" defines facts and rules, and then executes queries on them. It's all declarative, you don't ever see the algorithm that Prolog uses. It's a very different way of thinking, since you are just describing the problem, and asking Prolog to solve it for you.</p><p>One of the challenges was to reverse a list in Prolog.</p><pre><code class="prolog">list_reverse([], []).
@@ -82,7 +81,7 @@ sudoku(Puzzle, Solution) :-
 </code></pre><p>The exercise was to expand that solution for 6x6 and 9x9. That would have either meant a lot of typing and no thinking or an extreme amount of thinking trying to generalize a solution. I just didn't grasp the though process required for Prolog enough to try that.</p><p>Prolog has some fascinating use cases. At the beginning of the chapter, the author interviewed someone who had writing a masters thesis on predicting the behavior of a trained dolphin, given the rules the dolphin was taught. Apparently, Prolog also has a lot of use in natural language processing, with the IBM Watson computer even being partially written in it.</p><p>The end result is that Prolog doesn't click for me. I would need a lot more time with it than I want to spend. Especially considering I don't see any direct use cases for Prolog in the stuff I like to play around with.</p><p>Next up is Scala.</p>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/programming%20languages/">programming languages</a>
@@ -98,20 +97,22 @@ sudoku(Puzzle, Solution) :-
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2012-03-13-7-languages-scala/">&laquo; 7 Languages: Scala</a>
-        
-        
-        <a class="right" href="/posts/2012-03-10-7-languages-io/">7 Languages: Io &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2012-03-13-7-languages-scala/">&laquo; 7 Languages: Scala</a>
+    
+    
+    <a class="right" href="/posts/2012-03-10-7-languages-io/">7 Languages: Io &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -145,6 +146,9 @@ sudoku(Puzzle, Solution) :-
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>

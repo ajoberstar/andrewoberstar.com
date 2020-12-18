@@ -40,11 +40,10 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">7 Languages: Scala</h1>
-        <h2 class="">March 13, 2012</h2>
+<article>
+    <header>
+        <h1>7 Languages: Scala</h1>
+        <h2>March 13, 2012</h2>
     </header>
     
     <p>Just crossed the halfway point of 7 Languages in 7 Weeks with <a href="http://en.wikipedia.org/wiki/Scala_(programming_language)">Scala</a>. This is a hybrid object-oriented and functional language. It's a JVM based language, and provides interoperability with existing Java code. Like, Java it has strong static typing. Unlike Java, Scala can infer types in many cases, removing a lot of extra typing. For example in Java:</p><pre><code class="java">List&lt;String&gt; list = new ArrayList&lt;String&gt;();
@@ -68,7 +67,7 @@ class Person(name: String) with Greeter, Helper
 </code></pre><p>I'd really like to get into Scala some more (just ordered <a href="http://www.amazon.com/Programming-Scala-Comprehensive-Step---Step/dp/0981531644/ref=sr_1_1?s=books&amp;ie=UTF8&amp;qid=1331695083&amp;sr=1-1">Programming in Scala</a>, so I can do just that). It seems like a nice next step past Java. Giving some more modern constructs and simplifying some of the mundane ceremony in Java.</p><p>Next up Erlang...</p>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/scala/">scala</a>
@@ -84,20 +83,22 @@ class Person(name: String) with Greeter, Helper
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2012-03-18-7-languages-clojure/">&laquo; 7 Languages: Clojure</a>
-        
-        
-        <a class="right" href="/posts/2012-03-10-7-languages-prolog/">7 Languages: Prolog &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2012-03-18-7-languages-clojure/">&laquo; 7 Languages: Clojure</a>
+    
+    
+    <a class="right" href="/posts/2012-03-10-7-languages-prolog/">7 Languages: Prolog &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -131,6 +132,9 @@ class Person(name: String) with Greeter, Helper
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>

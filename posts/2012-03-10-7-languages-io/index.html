@@ -40,11 +40,10 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">7 Languages: Io</h1>
-        <h2 class="">March 10, 2012</h2>
+<article>
+    <header>
+        <h1>7 Languages: Io</h1>
+        <h2>March 10, 2012</h2>
     </header>
     
     <p>Chapter 2 of 7 Languages in 7 Weeks is on the <a href="http://en.wikipedia.org/wiki/Io_(programming_language)">Io programming language</a>. Io is a prototypical (like JavaScript) object oriented language. JavaScript usually gives me a bad taste in my mouth, because the prototype style just doesn't feel right. However, now that I have more experience with Io's prototyping, I can see the power. I wouldn't want to build an application with prototypes, but I see now that they have their place.</p><p>You create new objects by cloning other ones:</p><pre><code class="io">myObject  := Object clone
@@ -58,7 +57,7 @@ myObject printName := method(name println)
 </code></pre><p>That's it. There are no keywords, there's no syntactic sugar, none of the stuff I usually expect to have to learn with a new language. What you end up with is just learning the libraries that are provided, which is a chore and a half. I haven't been able to find a good reference of the available methods. I ended having to resort to using the <code>slotNames</code> slot of the major prototypes to get any idea of what was available. All you get there is the names, so there's not always a clear indication of what it does or what kind of arguments it expects.</p><p>Dealing with the normal libraries would have been enough challenge, but the 3rd set of exercises focused on metaprogramming. You have a lot of power to change the way that Io works. You can create new operators, change the behavior of any method on any object. A couple of the examples were for creating new map and list syntaxes which was pretty cool.</p><p>Inside of a method you can get all kinds of information about the message that is being invoked. Unfortunately there isn't much documentation on how to access or use that information.</p><p>I learned far more from Io than I did from Ruby, but  I don't see Io as a language I would write applications in. It has a lot to teach, especially if you come from a Java background. There's also some intriguing concurrency support, that the book gave only a passing discussion of.</p><p>Next up, Prolog!</p>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/programming%20languages/">programming languages</a>
@@ -74,20 +73,22 @@ myObject printName := method(name println)
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2012-03-10-7-languages-prolog/">&laquo; 7 Languages: Prolog</a>
-        
-        
-        <a class="right" href="/posts/2012-03-08-7-languages-ruby/">7 Languages: Ruby &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2012-03-10-7-languages-prolog/">&laquo; 7 Languages: Prolog</a>
+    
+    
+    <a class="right" href="/posts/2012-03-08-7-languages-ruby/">7 Languages: Ruby &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -121,6 +122,9 @@ myObject printName := method(name println)
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>

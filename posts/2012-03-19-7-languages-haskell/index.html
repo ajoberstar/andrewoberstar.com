@@ -40,11 +40,10 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">7 Languages: Haskell</h1>
-        <h2 class="">March 19, 2012</h2>
+<article>
+    <header>
+        <h1>7 Languages: Haskell</h1>
+        <h2>March 19, 2012</h2>
     </header>
     
     <p>The final language of 7 Languages in 7 Weeks was <a href="http://en.wikipedia.org/wiki/Haskell_(programming_language)">Haskell</a>, the only pure functional language in the book. This is the only chapter where I completely gave up on most of the exercises. More on that later...</p><p>Haskell as a functional language does a lot of the things I've seen in half the languages in the book. It has a list comprehension syntax almost identical to Erlang's, the common list manipulation functions like map, filter, and foldl, as well as pattern matching. Here's one example of a Haskell function:</p><pre><code class="haskell">allEven [] = []
@@ -66,7 +65,7 @@ product x y = x * y
 </code></pre><p>Which means product is a function that takes one <code>Integer</code> but returns a function that takes one more <code>Integer</code> which then returns an <code>Integer</code>. Pretty interesting concept.</p><p>There was another chapter on declaring types and monads which went almost completely over my head. It didn't help that I was already frustrated with Haskell and didn't really care how it worked anymore.</p><p>Haskell seems like it would teach me a lot about functional programming, but I don't have any intention of looking at it anytime soon. I'm sure it would be a lot easier to understand with a book tailored towards teaching the language rather than just getting a taste of what it has to offer.</p><p>I've got one more post coming to wrap up the 7 Languages book.</p>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/programming%20languages/">programming languages</a>
@@ -82,20 +81,22 @@ product x y = x * y
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2012-03-20-65-languages-in-12-days/">&laquo; 6.5 Languages in 12 Days</a>
-        
-        
-        <a class="right" href="/posts/2012-03-18-7-languages-erlang/">7 Languages: Erlang &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2012-03-20-65-languages-in-12-days/">&laquo; 6.5 Languages in 12 Days</a>
+    
+    
+    <a class="right" href="/posts/2012-03-18-7-languages-erlang/">7 Languages: Erlang &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -129,6 +130,9 @@ product x y = x * y
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>

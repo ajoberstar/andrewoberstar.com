@@ -40,11 +40,10 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">Quick Gradle Tip - Setting Bintray Attributes for Gradle Plugins</h1>
-        <h2 class="">September 28, 2014</h2>
+<article>
+    <header>
+        <h1>Quick Gradle Tip - Setting Bintray Attributes for Gradle Plugins</h1>
+        <h2>September 28, 2014</h2>
     </header>
     
     <p>As part of the new <a href="https://plugins.gradle.org/">Gradle plugin portal</a>, you need to set some attributes on the version of your plugin package in Bintray.</p><p>The <a href="https://github.com/bintray/gradle-bintray-plugin">Bintray Gradle plugin</a> lets you set attributes, so you can add the following snippet into your project to include all of your plugin IDs in the attributes.</p><p>Since Gradle requires you to put a properties file in your JAR for each plugin, you can get derive your whole attribute value from the project's group, name, and the names of the properties files within META-INF.</p><pre><code class="groovy">def pluginIds = project.fileTree(
@@ -65,7 +64,7 @@ bintray {
 </code></pre>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/technical/">technical</a>
@@ -77,20 +76,22 @@ bintray {
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2014-11-06-drinking-the-clojure-kool-aid/">&laquo; Drinking the Clojure Kool-Aid</a>
-        
-        
-        <a class="right" href="/posts/2013-08-23-gradle-test-organization/">Gradle Test Organization &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2014-11-06-drinking-the-clojure-kool-aid/">&laquo; Drinking the Clojure Kool-Aid</a>
+    
+    
+    <a class="right" href="/posts/2013-08-23-gradle-test-organization/">Gradle Test Organization &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -124,6 +125,9 @@ bintray {
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>

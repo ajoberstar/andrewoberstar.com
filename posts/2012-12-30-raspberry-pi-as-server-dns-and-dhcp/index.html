@@ -40,11 +40,10 @@
     </header>
     <main>
         
-<section>
-    <article class="post">
-    <header class="post-header">
-        <h1 class="">Raspberry Pi as Server - DNS and DHCP</h1>
-        <h2 class="">December 30, 2012</h2>
+<article>
+    <header>
+        <h1>Raspberry Pi as Server - DNS and DHCP</h1>
+        <h2>December 30, 2012</h2>
     </header>
     
     <p>In my <a href="http://www.andrewoberstar.com/blog/2012/12/30/raspberry-pi-as-ldap-and-dns-introduction">previous post</a>, I mentioned I'm trying to set up my <a href="http://www.raspberrypi.org/">Raspberry Pi</a> as an LDAP and DNS server.</p><p>Once I got Raspbian installed, I started to look into setting up the DNS server, the end goal is to have domain names for all devices on my internal network (e.g. instead of <code>192.168.0.5</code>, I can use <code>mydevice.lan.mydomain.com</code>). While, you can do this with platform specific hostname files (e.g. <code>/etc/hosts</code> or <code>C:\Windows\system32\drivers\drivers\etc\hosts</code>), it requires you to maintain that file on each device.</p><p>The final process I went through isn't Raspberry Pi specific, it should work on at least any Debian-based system.</p><p>I would also like to preface this by saying I am not a networking expert, so this post reflects my layman's understanding of what I ended up configuring.</p><h2 id="dns-software">DNS Software</h2><p>I've looked into setting up internal DNS before and always ended up finding instructions for <a href="https://www.isc.org/software/bind">bind</a>. From what I can tell, bind is insanely powerful, but it's also crazy complicated. For the tiny use case I have, the configuration is too much overhead.</p><p>I ended up finding references to <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">dnsmasq</a>, which is purpose built for small networks. Here's a rundown of the basic functionality I ended up using:</p><ul><li><strong>DNS forwarding and cache</strong> -  You still use your existing DNS (be it your ISP's DNS, Google public DNS, or OpenDNS) for accessing the Internet. In theory, the caching it provides could increase performance, though I don't have any expectations about that.</li><li><strong>DNS for static IPs</strong> - Define domain names for devices with static IPs on your network.</li><li><strong>DHCP</strong> - General DHCP provider.</li><li><strong>DNS for DHCP clients</strong> - For any client that leases an IP from dnsmasq, it will also provide a domain name to that IP. Essentially your own internal dynamic DNS.</li></ul><p>I wasn't interested in moving DHCP from my router to the Pi, until I found out that my router (<a href="http://www.asus.com/Networks/Wireless_Routers/RTN66U/">Asus RT-N66U</a>) also uses dnsmasq for DHCP. I was able to telnet onto the router to see the config, but I noticed a few options I wanted to set were not turned on and there wasn't a way to configure them from the web UI. While I could modify the config file manually, it is overwritten at restart by the stock firmware. So back to installing on the Pi.</p><h2 id="picking-internal-domain-names">Picking Internal Domain Names</h2><p>I started out planning to pick some TLD not used by ICANN (e.g. <code>.local</code> or <code>.home</code>) for my internal domains. Most posts I read on this subject recommended against that in case ICANN decided to use it in the future. Honestly, I don't expect that to be an issue, but I followed their advice anyway.</p><p>The recommendation was to stick with a domain you already own and designate a subdomain for all of your internal hosts to be assigned under. For example, if you own <code>mydomain.com</code>, you could designate <code>lan.mydomain.com</code> to be the root for all of your internal domains. A device might then be assigned <code>mydevice.lan.mydomain.com</code>. Gets a little wordy, but at least the namespace is safe.</p><h2 id="installation">Installation</h2><p>Through the magic of Debian, installing dnsmasq is as simple as:</p><pre><code>sudo apt-get install dnsmasq
@@ -69,7 +68,7 @@ domain=lan.mydomain.com
 </code></pre><h2 id="final-thoughts">Final Thoughts</h2><p>As neat as it is, the benefits of domain names internally are pretty minimal. I already had the handful of static IPs I use memorized, but it will be nice to have a friendlier name to use. I do like having domains for the DHCP clients, however, since it removes the need to look up the IP beforehand.</p><p>Next step will be setting up LDAP on the Pi.</p>
     <footer>
         
-        <div class="post-tags">
+        <div>
             <strong>Tags:</strong>
             
             <a href="/tags/technical/">technical</a>
@@ -81,20 +80,22 @@ domain=lan.mydomain.com
     </footer>
 </article>
 
-    <nav>
-        
-        <a href="/posts/2013-07-24-using-gradle-init-scripts-for-a-developer-specific-configuration/">&laquo; Using Gradle Init Scripts for Developer-Specific Configuration</a>
-        
-        
-        <a class="right" href="/posts/2012-12-30-raspberry-pi-as-ldap-and-dns-introduction/">Raspberry Pi as LDAP and DNS - Introduction &raquo;</a>
-        
-    </nav>
-
+<nav>
     
-</section>
+    <a href="/posts/2013-07-24-using-gradle-init-scripts-for-a-developer-specific-configuration/">&laquo; Using Gradle Init Scripts for Developer-Specific Configuration</a>
+    
+    
+    <a class="right" href="/posts/2012-12-30-raspberry-pi-as-ldap-and-dns-introduction/">Raspberry Pi as LDAP and DNS - Introduction &raquo;</a>
+    
+</nav>
+
+
 
     </main>
-    <footer id="main-footer">
+    <section id="side">
+        <header>
+            <h1>Tags</h1>
+        </header>
         <nav>
             
             <li><a href="/tags/erlang/">erlang</a></li>
@@ -128,6 +129,9 @@ domain=lan.mydomain.com
             <li><a href="/tags/7%20Languages%20in%207%20Weeks/">7 Languages in 7 Weeks</a></li>
             
         </nav>
+    </section>
+    <footer id="main-footer">
+
         <p>Copyright &copy; 2020 Andrew Oberstar</p>
         <p>Powered by <a href="http://cryogenweb.org">Cryogen</a></p>
     </footer>
