@@ -5,8 +5,10 @@
   src: url("/fonts/CascadiaCode.woff2") format("woff2");
 }
 
+/******************************************************************************/
+/* Color Scheme                                                               */
+/******************************************************************************/
 :root {
-  /* theme colors */
   --blue-crayola: #2176ffff;
   --platinum: #e8e9ebff;
   --alabaster: #e0dfd5ff;
@@ -34,6 +36,9 @@
   --shadow-color: rgba(34, 34, 34, 0.1);
 }
 
+/******************************************************************************/
+/* Fonts                                                                      */
+/******************************************************************************/
 body {
   font-family: 'Open Sans', sans-serif;
 }
@@ -44,7 +49,7 @@ body {
 }
 
 header > h1 {
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.5rem;
 }
 
@@ -54,157 +59,12 @@ header > h2 {
 }
 
 article > section > header > h1 {
-  font-weight: 600;
-  font-size: 1.1rem;
+  font-weight: 400;
+  font-size: 1.25rem;
 }
 
 code {
   font-family: "Cascadia Code", "Courier New", monospace;
-}
-
-/******************************************************************************/
-/* Layout                                                                     */
-/******************************************************************************/
-body {
-  display: grid;
-  grid-template-columns: 1rem repeat(10, minmax(0, 1fr)) 1rem;
-  grid-auto-rows: min-content;
-  grid-gap: 1rem;
-  margin: 0;
-}
-
-#main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-#main-header nav, #main-footer nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  list-style-type: none;
-}
-
-#main-header nav li, #main-footer nav li {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
-#main-header nav li:first-of-type {
-  margin-left: 0;
-}
-
-#main-header nav li:last-of-type {
-  margin-right: 0;
-}
-
-main {
-  display: grid;
-  grid-auto-rows: min-content;
-  grid-gap: 1rem;
-}
-
-article, main > nav, #side {
-  border-radius: 3px;
-  padding: 1rem;
-}
-
-header > h1, header > h2 {
-  margin: 0;
-}
-
-header {
-  margin-bottom: 0.5rem;
-}
-
-.hljs {
-  border-radius: 3px;
-}
-
-main > nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#main-footer {
-  margin-top: 1rem;
-  width: 100%;
-  text-align: center;
-}
-
-/******************************************************************************/
-/* Media                                                                      */
-/******************************************************************************/
-@media screen and (max-width: 767px) {
-  #main-header {
-    grid-column: 1 / span 12;
-    grid-row: 1;
-  }
-
-  main {
-    grid-column: 2 / span 10;
-    grid-row: 2;
-  }
-
-  #side {
-    grid-column: 2 / span 10;
-    grid-row: 3;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #side > nav {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    list-style-type: none;
-  }
-
-  #side > nav > li {
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
-  }
-
-  #main-footer {
-    grid-column: 1 / span 12;
-    grid-row: 4;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  #main-header {
-    grid-column: 1 / span 12;
-    grid-row: 1;
-  }
-
-  main {
-    grid-column: 2 / span 8;
-    grid-row: 2;
-  }
-
-  #side {
-    grid-column: 10 / span 2;
-    grid-row: 2;
-  }
-
-  #side > nav {
-    list-style-type: none;
-  }
-
-  #main-footer {
-    grid-column: 1 / span 12;
-    grid-row: 3;
-  }
 }
 
 /******************************************************************************/
@@ -253,4 +113,140 @@ a, a:visited, a:hover {
 #main-footer a, #main-footer a:visited, #main-footer a:hover {
   color: var(--main-footer-link-color);
   text-decoration: none;
+}
+
+/******************************************************************************/
+/* Layout                                                                     */
+/******************************************************************************/
+html, body {
+  height: 100%;
+}
+
+body {
+  /* 12 column grid with first and last columns being gaps */
+  display: grid;
+  grid-template-columns: 1rem repeat(10, minmax(0, 1fr)) 1rem;
+  grid-template-rows: min-content auto min-content;
+  grid-gap: 1rem;
+  /* remove stupid margin */
+  margin: 0;
+}
+
+/* separate brand from nav */
+#main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* align nav horizontally */
+#main-header nav, #main-footer nav {
+  display: grid;
+  grid-gap: 1rem;
+  list-style-type: none;
+}
+
+/* keep all nav items on same row */
+#main-header nav li, #main-footer nav li {
+  grid-row: 1;
+}
+
+/* have articles proceed in a column */
+main {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-gap: 1rem;
+}
+
+/* round borders of articles */
+article, main > nav, #side {
+  border-radius: 3px;
+  padding: 1rem;
+}
+
+/* avoid excessive margins in the headers */
+header > h1, header > h2 {
+  margin: 0;
+}
+
+/* set a margin on the overall article headers */
+header {
+  margin-bottom: 0.5rem;
+}
+
+/* round borders of code blocks */
+.hljs {
+  border-radius: 3px;
+}
+
+/* spread the prev/next nav at the end of the main content */
+main > nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* full-width footer */
+#main-footer {
+  width: 100%;
+  text-align: center;
+}
+
+/******************************************************************************/
+/* Media                                                                      */
+/******************************************************************************/
+/* remove sidebar */
+@media screen and (max-width: 1199px) {
+  #main-header {
+    grid-column: 1 / span 12;
+    grid-row: 1;
+  }
+
+  main {
+    grid-column: 2 / span 10;
+    grid-row: 2;
+  }
+
+  #side {
+    grid-column: 2 / span 10;
+    grid-row: 3;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #side {
+    display: none;
+  }
+
+  #main-footer {
+    grid-column: 1 / span 12;
+    grid-row: 4;
+  }
+}
+
+/* position sidebar on right */
+@media screen and (min-width: 1200px) {
+  #main-header {
+    grid-column: 1 / span 12;
+    grid-row: 1;
+  }
+
+  main {
+    grid-column: 2 / span 8;
+    grid-row: 2;
+  }
+
+  #side {
+    grid-column: 10 / span 2;
+    grid-row: 2;
+  }
+
+  #main-footer {
+    grid-column: 1 / span 12;
+    grid-row: 3;
+  }
 }

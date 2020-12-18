@@ -38,14 +38,32 @@
         {% endblock %}
     </main>
     <section id="side">
-        <header>
-            <h1>Tags</h1>
-        </header>
-        <nav>
-            {% for tag in tags %}
-            <li><a href="{{tag.uri}}">{{tag.name}}</a></li>
-            {% endfor %}
-        </nav>
+        {% if latest-posts|not-empty %}
+        <section>
+            <header>
+                <h1>Recent Posts</h1>
+            </header>
+            <ul>
+                {% for post in latest-posts %}
+                <li><a href="{{post.uri}}">{{post.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+        {% endif %}
+        {% if tags|not-empty %}
+        <section>
+            <header>
+                <h1>Tags</h1>
+            </header>
+            <nav>
+                <ul>
+                    {% for tag in tags %}
+                    <li><a href="{{tag.uri}}">{{tag.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </section>
+        {% endif %}
     </section>
     <footer id="main-footer">
 
