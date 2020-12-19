@@ -11,16 +11,15 @@
 :root {
   --blue-crayola: #2176ffff;
   --platinum: #e8e9ebff;
-  --alabaster: #e0dfd5ff;
+  --cambridge-blue: #96b09bff;
   --onyx: #313638ff;
   --tuscan-red: #885053ff;
-
 
   --main-header-bg-color: var(--onyx);
   --main-header-fg-color: var(--platinum);
   --main-header-link-color: var(--platinum);
 
-  --main-bg-color: var(--alabaster);
+  --main-bg-color: var(--cambridge-blue);
   --main-link-color: var(--blue-crayola);
 
   --article-bg-color: white;
